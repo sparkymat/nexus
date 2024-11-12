@@ -1,5 +1,6 @@
 package internal
 
 type Services struct {
-	User UserService
+	User   UserService
+	Object ObjectService
 }

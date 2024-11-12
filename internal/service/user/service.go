@@ -5,17 +5,16 @@ import (
 	"fmt"
 
 	"github.com/sparkymat/nexus/internal/dbx"
-	"github.com/sparkymat/nexus/internal/service"
 )
 
-func New(db service.DatabaseProvider) *Service {
+func New(db *dbx.Queries) *Service {
 	return &Service{
 		db: db,
 	}
 }
 
 type Service struct {
-	db service.DatabaseProvider
+	db *dbx.Queries
 }
 
 func (s *Service) CreateUser(ctx context.Context, name string, email string, encryptedPassword string) (dbx.User, error) {

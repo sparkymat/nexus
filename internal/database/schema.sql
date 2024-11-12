@@ -40,7 +40,8 @@ CREATE TYPE public.property_type AS ENUM (
     'float',
     'boolean',
     'object',
-    'image'
+    'image',
+    'date'
 );
 
 
@@ -70,13 +71,16 @@ CREATE TABLE public.objects (
 CREATE TABLE public.properties (
     id uuid DEFAULT gen_random_uuid() NOT NULL,
     name text NOT NULL,
+    object_id uuid NOT NULL,
+    template_id uuid,
+    property_type public.property_type NOT NULL,
     string_value text,
     integer_value integer,
     float_value double precision,
+    object_value_id uuid,
+    date_value date,
     boolean_value boolean,
-    object_id uuid,
     image_path text,
-    template_id uuid,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
@@ -168,6 +172,13 @@ CREATE INDEX properties_boolean_idx ON public.properties USING btree (boolean_va
 
 
 --
+-- Name: properties_date_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX properties_date_idx ON public.properties USING btree (date_value);
+
+
+--
 -- Name: properties_float_idx; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -237,6 +248,14 @@ ALTER TABLE ONLY public.objects
 
 ALTER TABLE ONLY public.properties
     ADD CONSTRAINT properties_object_id_fkey FOREIGN KEY (object_id) REFERENCES public.objects(id) ON DELETE CASCADE;
+
+
+--
+-- Name: properties properties_object_value_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.properties
+    ADD CONSTRAINT properties_object_value_id_fkey FOREIGN KEY (object_value_id) REFERENCES public.objects(id) ON DELETE SET NULL;
 
 
 --

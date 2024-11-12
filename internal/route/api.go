@@ -5,6 +5,7 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/sparkymat/nexus/internal"
 	"github.com/sparkymat/nexus/internal/auth"
+	"github.com/sparkymat/nexus/internal/handler/api"
 )
 
 //nolint:funlen
@@ -20,4 +21,6 @@ func registerAPIRoutes(app *echo.Group, cfg internal.ConfigService, services int
 	apiGroup.Use(middleware.CSRFWithConfig(middleware.CSRFConfig{
 		TokenLookup: "header:X-CSRF-Token",
 	}))
+
+	apiGroup.POST("/objects", api.ObjectsCreate(services))
 }

@@ -21,6 +21,7 @@ const (
 	PropertyTypeBoolean PropertyType = "boolean"
 	PropertyTypeObject  PropertyType = "object"
 	PropertyTypeImage   PropertyType = "image"
+	PropertyTypeDate    PropertyType = "date"
 )
 
 func (e *PropertyType) Scan(src interface{}) error {
@@ -69,17 +70,20 @@ type Object struct {
 }
 
 type Property struct {
-	ID           uuid.UUID
-	Name         string
-	StringValue  pgtype.Text
-	IntegerValue pgtype.Int4
-	FloatValue   pgtype.Float8
-	BooleanValue pgtype.Bool
-	ObjectID     uuid.NullUUID
-	ImagePath    pgtype.Text
-	TemplateID   uuid.NullUUID
-	CreatedAt    pgtype.Timestamp
-	UpdatedAt    pgtype.Timestamp
+	ID            uuid.UUID
+	Name          string
+	ObjectID      uuid.UUID
+	TemplateID    uuid.NullUUID
+	PropertyType  PropertyType
+	StringValue   pgtype.Text
+	IntegerValue  pgtype.Int4
+	FloatValue    pgtype.Float8
+	ObjectValueID uuid.NullUUID
+	DateValue     pgtype.Date
+	BooleanValue  pgtype.Bool
+	ImagePath     pgtype.Text
+	CreatedAt     pgtype.Timestamp
+	UpdatedAt     pgtype.Timestamp
 }
 
 type SchemaMigration struct {

@@ -557,10 +557,10 @@
               props.children = childArray;
             }
             if (type && type.defaultProps) {
-              var defaultProps56 = type.defaultProps;
-              for (propName in defaultProps56) {
+              var defaultProps60 = type.defaultProps;
+              for (propName in defaultProps60) {
                 if (props[propName] === void 0) {
-                  props[propName] = defaultProps56[propName];
+                  props[propName] = defaultProps60[propName];
                 }
               }
             }
@@ -603,14 +603,14 @@
                 }
                 key = "" + config.key;
               }
-              var defaultProps56;
+              var defaultProps60;
               if (element2.type && element2.type.defaultProps) {
-                defaultProps56 = element2.type.defaultProps;
+                defaultProps60 = element2.type.defaultProps;
               }
               for (propName in config) {
                 if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
-                  if (config[propName] === void 0 && defaultProps56 !== void 0) {
-                    props[propName] = defaultProps56[propName];
+                  if (config[propName] === void 0 && defaultProps60 !== void 0) {
+                    props[propName] = defaultProps60[propName];
                   } else {
                     props[propName] = config[propName];
                   }
@@ -787,7 +787,7 @@
             }
             return children;
           }
-          function createContext11(defaultValue) {
+          function createContext12(defaultValue) {
             var context = {
               $$typeof: REACT_CONTEXT_TYPE,
               // As a workaround to support multiple concurrent renderers, we categorize
@@ -941,17 +941,17 @@
               _init: lazyInitializer
             };
             {
-              var defaultProps56;
+              var defaultProps60;
               var propTypes;
               Object.defineProperties(lazyType, {
                 defaultProps: {
                   configurable: true,
                   get: function() {
-                    return defaultProps56;
+                    return defaultProps60;
                   },
                   set: function(newDefaultProps) {
                     error2("React.lazy(...): It is not supported to assign `defaultProps` to a lazy component import. Either specify them where the component is defined, or create a wrapping component around it.");
-                    defaultProps56 = newDefaultProps;
+                    defaultProps60 = newDefaultProps;
                     Object.defineProperty(lazyType, "defaultProps", {
                       enumerable: true
                     });
@@ -974,7 +974,7 @@
             }
             return lazyType;
           }
-          function forwardRef25(render) {
+          function forwardRef26(render) {
             {
               if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
                 error2("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
@@ -1073,7 +1073,7 @@
             }
             return dispatcher;
           }
-          function useContext13(Context) {
+          function useContext14(Context) {
             var dispatcher = resolveDispatcher();
             {
               if (Context._context !== void 0) {
@@ -1087,7 +1087,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState24(initialState2) {
+          function useState26(initialState2) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState2);
           }
@@ -1111,7 +1111,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useLayoutEffect(create, deps);
           }
-          function useCallback15(callback, deps) {
+          function useCallback17(callback, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useCallback(callback, deps);
           }
@@ -1868,18 +1868,18 @@
           exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
           exports.act = act;
           exports.cloneElement = cloneElement$1;
-          exports.createContext = createContext11;
+          exports.createContext = createContext12;
           exports.createElement = createElement$1;
           exports.createFactory = createFactory;
           exports.createRef = createRef;
-          exports.forwardRef = forwardRef25;
+          exports.forwardRef = forwardRef26;
           exports.isValidElement = isValidElement3;
           exports.lazy = lazy;
           exports.memo = memo3;
           exports.startTransition = startTransition2;
           exports.unstable_act = act;
-          exports.useCallback = useCallback15;
-          exports.useContext = useContext13;
+          exports.useCallback = useCallback17;
+          exports.useContext = useContext14;
           exports.useDebugValue = useDebugValue2;
           exports.useDeferredValue = useDeferredValue;
           exports.useEffect = useEffect28;
@@ -1890,7 +1890,7 @@
           exports.useMemo = useMemo11;
           exports.useReducer = useReducer4;
           exports.useRef = useRef28;
-          exports.useState = useState24;
+          exports.useState = useState26;
           exports.useSyncExternalStore = useSyncExternalStore4;
           exports.useTransition = useTransition2;
           exports.version = ReactVersion;
@@ -2812,9 +2812,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React24 = require_react();
+          var React25 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React24.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React25.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -2863,7 +2863,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment15 = 7;
+          var Fragment16 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -4019,7 +4019,7 @@
                 return "DehydratedFragment";
               case ForwardRef:
                 return getWrappedName$1(type, type.render, "ForwardRef");
-              case Fragment15:
+              case Fragment16:
                 return "Fragment";
               case HostComponent:
                 return type;
@@ -4419,7 +4419,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React24.Children.forEach(props.children, function(child) {
+                  React25.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12420,7 +12420,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment15) {
+              if (current2 === null || current2.tag !== Fragment16) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -12823,7 +12823,7 @@
                 if (child.key === key) {
                   var elementType = element2.type;
                   if (elementType === REACT_FRAGMENT_TYPE) {
-                    if (child.tag === Fragment15) {
+                    if (child.tag === Fragment16) {
                       deleteRemainingChildren(returnFiber, child.sibling);
                       var existing = useFiber(child, element2.props.children);
                       existing.return = returnFiber;
@@ -15722,10 +15722,10 @@
           function resolveDefaultProps(Component2, baseProps) {
             if (Component2 && Component2.defaultProps) {
               var props = assign({}, baseProps);
-              var defaultProps56 = Component2.defaultProps;
-              for (var propName in defaultProps56) {
+              var defaultProps60 = Component2.defaultProps;
+              for (var propName in defaultProps60) {
                 if (props[propName] === void 0) {
-                  props[propName] = defaultProps56[propName];
+                  props[propName] = defaultProps60[propName];
                 }
               }
               return props;
@@ -18300,7 +18300,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment15:
+              case Fragment16:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -18573,7 +18573,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment15:
+              case Fragment16:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -22832,7 +22832,7 @@
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment15, elements, key, mode);
+            var fiber = createFiber(Fragment16, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -23991,8 +23991,8 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React24 = require_react();
-          var ReactSharedInternals = React24.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var React25 = require_react();
+          var ReactSharedInternals = React25.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function error2(format) {
             {
               {
@@ -24022,13 +24022,13 @@
             return x2 === y2 && (x2 !== 0 || 1 / x2 === 1 / y2) || x2 !== x2 && y2 !== y2;
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
-          var useState24 = React24.useState, useEffect28 = React24.useEffect, useLayoutEffect8 = React24.useLayoutEffect, useDebugValue2 = React24.useDebugValue;
+          var useState26 = React25.useState, useEffect28 = React25.useEffect, useLayoutEffect8 = React25.useLayoutEffect, useDebugValue2 = React25.useDebugValue;
           var didWarnOld18Alpha = false;
           var didWarnUncachedGetSnapshot = false;
           function useSyncExternalStore4(subscribe, getSnapshot, getServerSnapshot) {
             {
               if (!didWarnOld18Alpha) {
-                if (React24.startTransition !== void 0) {
+                if (React25.startTransition !== void 0) {
                   didWarnOld18Alpha = true;
                   error2("You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release.");
                 }
@@ -24044,7 +24044,7 @@
                 }
               }
             }
-            var _useState = useState24({
+            var _useState = useState26({
               inst: {
                 value,
                 getSnapshot
@@ -24093,7 +24093,7 @@
           var canUseDOM2 = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
           var isServerEnvironment = !canUseDOM2;
           var shim = isServerEnvironment ? useSyncExternalStore$1 : useSyncExternalStore4;
-          var useSyncExternalStore$2 = React24.useSyncExternalStore !== void 0 ? React24.useSyncExternalStore : shim;
+          var useSyncExternalStore$2 = React25.useSyncExternalStore !== void 0 ? React25.useSyncExternalStore : shim;
           exports.useSyncExternalStore = useSyncExternalStore$2;
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
@@ -24125,14 +24125,14 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React24 = require_react();
+          var React25 = require_react();
           var shim = require_shim();
           function is(x2, y2) {
             return x2 === y2 && (x2 !== 0 || 1 / x2 === 1 / y2) || x2 !== x2 && y2 !== y2;
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
           var useSyncExternalStore4 = shim.useSyncExternalStore;
-          var useRef28 = React24.useRef, useEffect28 = React24.useEffect, useMemo11 = React24.useMemo, useDebugValue2 = React24.useDebugValue;
+          var useRef28 = React25.useRef, useEffect28 = React25.useEffect, useMemo11 = React25.useMemo, useDebugValue2 = React25.useDebugValue;
           function useSyncExternalStoreWithSelector3(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
             var instRef = useRef28(null);
             var inst;
@@ -24286,7 +24286,7 @@
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment15 = REACT_FRAGMENT_TYPE;
+          var Fragment16 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal2 = REACT_PORTAL_TYPE;
@@ -24345,7 +24345,7 @@
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment15;
+          exports.Fragment = Fragment16;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal2;
@@ -24557,7 +24557,7 @@
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment15 = REACT_FRAGMENT_TYPE;
+          var Fragment16 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo = REACT_MEMO_TYPE;
           var Portal2 = REACT_PORTAL_TYPE;
@@ -24625,7 +24625,7 @@
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment15;
+          exports.Fragment = Fragment16;
           exports.Lazy = Lazy;
           exports.Memo = Memo;
           exports.Portal = Portal2;
@@ -24673,7 +24673,7 @@
       if (true) {
         (function() {
           "use strict";
-          var React24 = require_react();
+          var React25 = require_react();
           var REACT_ELEMENT_TYPE = Symbol.for("react.element");
           var REACT_PORTAL_TYPE = Symbol.for("react.portal");
           var REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
@@ -24699,7 +24699,7 @@
             }
             return null;
           }
-          var ReactSharedInternals = React24.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React25.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function error2(format) {
             {
               {
@@ -25291,10 +25291,10 @@
                 }
               }
               if (type && type.defaultProps) {
-                var defaultProps56 = type.defaultProps;
-                for (propName in defaultProps56) {
+                var defaultProps60 = type.defaultProps;
+                for (propName in defaultProps60) {
                   if (props[propName] === void 0) {
-                    props[propName] = defaultProps56[propName];
+                    props[propName] = defaultProps60[propName];
                   }
                 }
               }
@@ -25549,11 +25549,11 @@
               return jsxWithValidation(type, props, key, false);
             }
           }
-          var jsx85 = jsxWithValidationDynamic;
-          var jsxs22 = jsxWithValidationStatic;
+          var jsx92 = jsxWithValidationDynamic;
+          var jsxs24 = jsxWithValidationStatic;
           exports.Fragment = REACT_FRAGMENT_TYPE;
-          exports.jsx = jsx85;
-          exports.jsxs = jsxs22;
+          exports.jsx = jsx92;
+          exports.jsxs = jsxs24;
         })();
       }
     }
@@ -26210,14 +26210,14 @@
   });
 
   // node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs
-  var import_react161, createReactComponent;
+  var import_react170, createReactComponent;
   var init_createReactComponent = __esm({
     "node_modules/@tabler/icons-react/dist/esm/createReactComponent.mjs"() {
-      import_react161 = __toESM(require_react(), 1);
+      import_react170 = __toESM(require_react(), 1);
       init_defaultAttributes();
       createReactComponent = (type, iconName, iconNamePascal, iconNode) => {
-        const Component2 = (0, import_react161.forwardRef)(
-          ({ color = "currentColor", size: size4 = 24, stroke = 2, title, className, children, ...rest }, ref) => (0, import_react161.createElement)(
+        const Component2 = (0, import_react170.forwardRef)(
+          ({ color = "currentColor", size: size4 = 24, stroke = 2, title, className, children, ...rest }, ref) => (0, import_react170.createElement)(
             "svg",
             {
               ref,
@@ -26234,8 +26234,8 @@
               ...rest
             },
             [
-              title && (0, import_react161.createElement)("title", { key: "svg-title" }, title),
-              ...iconNode.map(([tag, attrs]) => (0, import_react161.createElement)(tag, attrs)),
+              title && (0, import_react170.createElement)("title", { key: "svg-title" }, title),
+              ...iconNode.map(([tag, attrs]) => (0, import_react170.createElement)(tag, attrs)),
               ...Array.isArray(children) ? children : [children]
             ]
           )
@@ -26255,6 +26255,15 @@
     }
   });
 
+  // node_modules/@tabler/icons-react/dist/esm/icons/IconFilePlus.mjs
+  var IconFilePlus;
+  var init_IconFilePlus = __esm({
+    "node_modules/@tabler/icons-react/dist/esm/icons/IconFilePlus.mjs"() {
+      init_createReactComponent();
+      IconFilePlus = createReactComponent("outline", "file-plus", "IconFilePlus", [["path", { "d": "M14 3v4a1 1 0 0 0 1 1h4", "key": "svg-0" }], ["path", { "d": "M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z", "key": "svg-1" }], ["path", { "d": "M12 11l0 6", "key": "svg-2" }], ["path", { "d": "M9 14l6 0", "key": "svg-3" }]]);
+    }
+  });
+
   // node_modules/@tabler/icons-react/dist/esm/icons/IconUserCircle.mjs
   var IconUserCircle;
   var init_IconUserCircle = __esm({
@@ -26265,7 +26274,7 @@
   });
 
   // src/index.tsx
-  var import_react165 = __toESM(require_react());
+  var import_react175 = __toESM(require_react());
   var import_dayjs = __toESM(require_dayjs_min());
   var import_relativeTime = __toESM(require_relativeTime());
   var import_utc = __toESM(require_utc());
@@ -31081,7 +31090,7 @@
   function MantineClasses() {
     const theme2 = useMantineTheme();
     const nonce = useMantineStyleNonce();
-    const classes26 = keys(theme2.breakpoints).reduce((acc, breakpoint) => {
+    const classes30 = keys(theme2.breakpoints).reduce((acc, breakpoint) => {
       const isPxBreakpoint = theme2.breakpoints[breakpoint].includes("px");
       const pxValue = px(theme2.breakpoints[breakpoint]);
       const maxWidthBreakpoint = isPxBreakpoint ? `${pxValue - 0.1}px` : em(pxValue - 0.1);
@@ -31093,7 +31102,7 @@
       {
         "data-mantine-styles": "classes",
         nonce: nonce?.(),
-        dangerouslySetInnerHTML: { __html: classes26 }
+        dangerouslySetInnerHTML: { __html: classes30 }
       }
     );
   }
@@ -31670,8 +31679,8 @@
   }
 
   // node_modules/@mantine/core/esm/core/styles-api/use-styles/get-class-name/get-selector-class-name/get-selector-class-name.mjs
-  function getSelectorClassName({ selector, classes: classes26, unstyled }) {
-    return unstyled ? void 0 : classes26[selector];
+  function getSelectorClassName({ selector, classes: classes30, unstyled }) {
+    return unstyled ? void 0 : classes30[selector];
   }
 
   // node_modules/@mantine/core/esm/core/styles-api/use-styles/get-class-name/get-static-class-names/get-static-class-names.mjs
@@ -31708,11 +31717,11 @@
   // node_modules/@mantine/core/esm/core/styles-api/use-styles/get-class-name/get-variant-class-name/get-variant-class-name.mjs
   function getVariantClassName({
     options,
-    classes: classes26,
+    classes: classes30,
     selector,
     unstyled
   }) {
-    return options?.variant && !unstyled ? classes26[`${selector}--${options.variant}`] : void 0;
+    return options?.variant && !unstyled ? classes30[`${selector}--${options.variant}`] : void 0;
   }
 
   // node_modules/@mantine/core/esm/core/styles-api/use-styles/get-class-name/get-class-name.mjs
@@ -31723,7 +31732,7 @@
     selector,
     classNamesPrefix,
     classNames,
-    classes: classes26,
+    classes: classes30,
     unstyled,
     className,
     rootSelector,
@@ -31736,12 +31745,12 @@
     return clsx_default(
       getGlobalClassNames({ theme: theme2, options, unstyled: unstyled || headless }),
       getThemeClassNames({ theme: theme2, themeName, selector, props, stylesCtx }),
-      getVariantClassName({ options, classes: classes26, selector, unstyled }),
+      getVariantClassName({ options, classes: classes30, selector, unstyled }),
       getResolvedClassNames({ selector, stylesCtx, theme: theme2, classNames, props }),
       getResolvedClassNames({ selector, stylesCtx, theme: theme2, classNames: transformedStyles, props }),
       getOptionsClassNames({ selector, stylesCtx, options, props, theme: theme2 }),
       getRootClassName({ rootSelector, selector, className }),
-      getSelectorClassName({ selector, classes: classes26, unstyled: unstyled || headless }),
+      getSelectorClassName({ selector, classes: classes30, unstyled: unstyled || headless }),
       withStaticClasses && !headless && getStaticClassNames({
         themeName,
         classNamesPrefix,
@@ -31804,7 +31813,7 @@
   // node_modules/@mantine/core/esm/core/styles-api/use-styles/get-style/resolve-vars/resolve-vars.mjs
   function resolveVars({
     vars,
-    varsResolver: varsResolver26,
+    varsResolver: varsResolver29,
     theme: theme2,
     props,
     stylesCtx,
@@ -31813,7 +31822,7 @@
     headless
   }) {
     return mergeVars([
-      headless ? {} : varsResolver26?.(theme2, props, stylesCtx),
+      headless ? {} : varsResolver29?.(theme2, props, stylesCtx),
       ...themeName.map((name) => theme2.components?.[name]?.vars?.(theme2, props, stylesCtx)),
       vars?.(theme2, props, stylesCtx)
     ])?.[selector];
@@ -31831,7 +31840,7 @@
     styles,
     style,
     vars,
-    varsResolver: varsResolver26,
+    varsResolver: varsResolver29,
     headless,
     withStylesTransform
   }) {
@@ -31839,7 +31848,7 @@
       ...!withStylesTransform && getThemeStyles({ theme: theme2, themeName, props, stylesCtx, selector }),
       ...!withStylesTransform && resolveStyles({ theme: theme2, styles, props, stylesCtx })[selector],
       ...!withStylesTransform && resolveStyles({ theme: theme2, styles: options?.styles, props: options?.props || props, stylesCtx })[selector],
-      ...resolveVars({ theme: theme2, props, stylesCtx, vars, varsResolver: varsResolver26, selector, themeName, headless }),
+      ...resolveVars({ theme: theme2, props, stylesCtx, vars, varsResolver: varsResolver29, selector, themeName, headless }),
       ...rootSelector === selector ? resolveStyle({ style, theme: theme2 }) : null,
       ...resolveStyle({ style: options?.style, theme: theme2 })
     };
@@ -31874,7 +31883,7 @@
   // node_modules/@mantine/core/esm/core/styles-api/use-styles/use-styles.mjs
   function useStyles({
     name,
-    classes: classes26,
+    classes: classes30,
     props,
     stylesCtx,
     className,
@@ -31884,7 +31893,7 @@
     classNames,
     styles,
     vars,
-    varsResolver: varsResolver26
+    varsResolver: varsResolver29
   }) {
     const theme2 = useMantineTheme();
     const classNamesPrefix = useMantineClassNamesPrefix();
@@ -31904,7 +31913,7 @@
         selector,
         classNamesPrefix,
         classNames,
-        classes: classes26,
+        classes: classes30,
         unstyled,
         className,
         rootSelector,
@@ -31925,11 +31934,16 @@
         styles,
         style,
         vars,
-        varsResolver: varsResolver26,
+        varsResolver: varsResolver29,
         headless,
         withStylesTransform
       })
     });
+  }
+
+  // node_modules/@mantine/core/esm/core/MantineProvider/color-functions/get-auto-contrast-value/get-auto-contrast-value.mjs
+  function getAutoContrastValue(autoContrast, theme2) {
+    return typeof autoContrast === "boolean" ? autoContrast : theme2.autoContrast;
   }
 
   // node_modules/@mantine/core/esm/core/MantineProvider/use-mantine-color-scheme/use-mantine-color-scheme.mjs
@@ -32002,11 +32016,11 @@
   // node_modules/@mantine/core/esm/core/MantineProvider/use-props/use-props.mjs
   var import_react39 = __toESM(require_react(), 1);
   var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
-  function useProps(component, defaultProps56, props) {
+  function useProps(component, defaultProps60, props) {
     const theme2 = useMantineTheme();
     const contextPropsPayload = theme2.components[component]?.defaultProps;
     const contextProps = typeof contextPropsPayload === "function" ? contextPropsPayload(theme2) : contextPropsPayload;
-    return { ...defaultProps56, ...contextProps, ...filterProps(props) };
+    return { ...defaultProps60, ...contextProps, ...filterProps(props) };
   }
 
   // node_modules/@mantine/core/esm/core/MantineProvider/create-theme/create-theme.mjs
@@ -38127,16 +38141,477 @@
   AppShell.Footer = AppShellFooter;
   AppShell.Section = AppShellSection;
 
-  // node_modules/@mantine/core/esm/components/Burger/Burger.mjs
+  // node_modules/@mantine/core/esm/components/Checkbox/Checkbox.mjs
+  var import_jsx_runtime99 = __toESM(require_jsx_runtime(), 1);
+  var import_react130 = __toESM(require_react(), 1);
+
+  // node_modules/@mantine/core/esm/components/InlineInput/InlineInput.mjs
   var import_jsx_runtime92 = __toESM(require_jsx_runtime(), 1);
   var import_react122 = __toESM(require_react(), 1);
 
-  // node_modules/@mantine/core/esm/components/Burger/Burger.module.css.mjs
-  var classes16 = { "root": "m_fea6bf1a", "burger": "m_d4fb9cad" };
+  // node_modules/@mantine/core/esm/components/InlineInput/InlineInput.module.css.mjs
+  var classes16 = { "root": "m_5f75b09e", "body": "m_5f6e695e", "labelWrapper": "m_d3ea56bb", "label": "m_8ee546b8", "description": "m_328f68c0", "error": "m_8e8a99cc" };
+
+  // node_modules/@mantine/core/esm/components/InlineInput/InlineInput.mjs
+  var InlineInputClasses = classes16;
+  var InlineInput = (0, import_react122.forwardRef)(
+    ({
+      __staticSelector,
+      __stylesApiProps,
+      className,
+      classNames,
+      styles,
+      unstyled,
+      children,
+      label,
+      description,
+      id,
+      disabled,
+      error: error2,
+      size: size4,
+      labelPosition = "left",
+      bodyElement = "div",
+      labelElement = "label",
+      variant,
+      style,
+      vars,
+      mod,
+      ...others
+    }, ref) => {
+      const getStyles2 = useStyles({
+        name: __staticSelector,
+        props: __stylesApiProps,
+        className,
+        style,
+        classes: classes16,
+        classNames,
+        styles,
+        unstyled
+      });
+      return /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(
+        Box,
+        {
+          ...getStyles2("root"),
+          ref,
+          __vars: {
+            "--label-fz": getFontSize(size4),
+            "--label-lh": getSize(size4, "label-lh")
+          },
+          mod: [{ "label-position": labelPosition }, mod],
+          variant,
+          size: size4,
+          ...others,
+          children: /* @__PURE__ */ (0, import_jsx_runtime92.jsxs)(
+            Box,
+            {
+              component: bodyElement,
+              htmlFor: bodyElement === "label" ? id : void 0,
+              ...getStyles2("body"),
+              children: [
+                children,
+                /* @__PURE__ */ (0, import_jsx_runtime92.jsxs)("div", { ...getStyles2("labelWrapper"), "data-disabled": disabled || void 0, children: [
+                  label && /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(
+                    Box,
+                    {
+                      component: labelElement,
+                      htmlFor: labelElement === "label" ? id : void 0,
+                      ...getStyles2("label"),
+                      "data-disabled": disabled || void 0,
+                      children: label
+                    }
+                  ),
+                  description && /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(Input.Description, { size: size4, __inheritStyles: false, ...getStyles2("description"), children: description }),
+                  error2 && typeof error2 !== "boolean" && /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(Input.Error, { size: size4, __inheritStyles: false, ...getStyles2("error"), children: error2 })
+                ] })
+              ]
+            }
+          )
+        }
+      );
+    }
+  );
+  InlineInput.displayName = "@mantine/core/InlineInput";
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxCard/CheckboxCard.mjs
+  var import_jsx_runtime94 = __toESM(require_jsx_runtime(), 1);
+  var import_react125 = __toESM(require_react(), 1);
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxGroup.context.mjs
+  var import_react123 = __toESM(require_react(), 1);
+  var CheckboxGroupContext = (0, import_react123.createContext)(null);
+  var CheckboxGroupProvider = CheckboxGroupContext.Provider;
+  var useCheckboxGroupContext = () => (0, import_react123.useContext)(CheckboxGroupContext);
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxCard/CheckboxCard.context.mjs
+  var import_react124 = __toESM(require_react(), 1);
+  var import_jsx_runtime93 = __toESM(require_jsx_runtime(), 1);
+  var [CheckboxCardProvider, useCheckboxCardContext] = createOptionalContext();
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxCard/CheckboxCard.module.css.mjs
+  var classes17 = { "card": "m_26775b0a" };
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxCard/CheckboxCard.mjs
+  var defaultProps30 = {
+    withBorder: true
+  };
+  var varsResolver16 = createVarsResolver((_2, { radius }) => ({
+    card: {
+      "--card-radius": getRadius(radius)
+    }
+  }));
+  var CheckboxCard = factory((_props, ref) => {
+    const props = useProps("CheckboxCard", defaultProps30, _props);
+    const {
+      classNames,
+      className,
+      style,
+      styles,
+      unstyled,
+      vars,
+      checked,
+      mod,
+      withBorder,
+      value,
+      onClick,
+      ...others
+    } = props;
+    const getStyles2 = useStyles({
+      name: "CheckboxCard",
+      classes: classes17,
+      props,
+      className,
+      style,
+      classNames,
+      styles,
+      unstyled,
+      vars,
+      varsResolver: varsResolver16,
+      rootSelector: "card"
+    });
+    const ctx = useCheckboxGroupContext();
+    const _checked = typeof checked === "boolean" ? checked : ctx?.value.includes(value || "") || false;
+    return /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(CheckboxCardProvider, { value: { checked: _checked }, children: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+      UnstyledButton,
+      {
+        ref,
+        mod: [{ "with-border": withBorder, checked: _checked }, mod],
+        ...getStyles2("card"),
+        ...others,
+        role: "checkbox",
+        "aria-checked": _checked,
+        onClick: (event) => {
+          onClick?.(event);
+          ctx?.onChange(value || "");
+        }
+      }
+    ) });
+  });
+  CheckboxCard.displayName = "@mantine/core/CheckboxCard";
+  CheckboxCard.classes = classes17;
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxGroup/CheckboxGroup.mjs
+  var import_jsx_runtime96 = __toESM(require_jsx_runtime(), 1);
+  var import_react127 = __toESM(require_react(), 1);
+
+  // node_modules/@mantine/core/esm/components/InputsGroupFieldset/InputsGroupFieldset.mjs
+  var import_jsx_runtime95 = __toESM(require_jsx_runtime(), 1);
+  var import_react126 = __toESM(require_react(), 1);
+  function InputsGroupFieldset({ children, role }) {
+    const ctx = useInputWrapperContext();
+    if (!ctx) {
+      return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(import_jsx_runtime95.Fragment, { children });
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime95.jsx)("div", { role, "aria-labelledby": ctx.labelId, "aria-describedby": ctx.describedBy, children });
+  }
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxGroup/CheckboxGroup.mjs
+  var defaultProps31 = {};
+  var CheckboxGroup = factory((props, ref) => {
+    const { value, defaultValue, onChange, size: size4, wrapperProps, children, readOnly, ...others } = useProps("CheckboxGroup", defaultProps31, props);
+    const [_value, setValue] = useUncontrolled({
+      value,
+      defaultValue,
+      finalValue: [],
+      onChange
+    });
+    const handleChange = (event) => {
+      const itemValue = typeof event === "string" ? event : event.currentTarget.value;
+      !readOnly && setValue(
+        _value.includes(itemValue) ? _value.filter((item) => item !== itemValue) : [..._value, itemValue]
+      );
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime96.jsx)(CheckboxGroupProvider, { value: { value: _value, onChange: handleChange, size: size4 }, children: /* @__PURE__ */ (0, import_jsx_runtime96.jsx)(
+      Input.Wrapper,
+      {
+        size: size4,
+        ref,
+        ...wrapperProps,
+        ...others,
+        labelElement: "div",
+        __staticSelector: "CheckboxGroup",
+        children: /* @__PURE__ */ (0, import_jsx_runtime96.jsx)(InputsGroupFieldset, { role: "group", children })
+      }
+    ) });
+  });
+  CheckboxGroup.classes = Input.Wrapper.classes;
+  CheckboxGroup.displayName = "@mantine/core/CheckboxGroup";
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxIndicator/CheckboxIndicator.mjs
+  var import_jsx_runtime98 = __toESM(require_jsx_runtime(), 1);
+  var import_react129 = __toESM(require_react(), 1);
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckIcon.mjs
+  var import_jsx_runtime97 = __toESM(require_jsx_runtime(), 1);
+  var import_react128 = __toESM(require_react(), 1);
+  function CheckIcon({ size: size4, style, ...others }) {
+    const _style = size4 !== void 0 ? { width: rem(size4), height: rem(size4), ...style } : style;
+    return /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(
+      "svg",
+      {
+        viewBox: "0 0 10 7",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        style: _style,
+        "aria-hidden": true,
+        ...others,
+        children: /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(
+          "path",
+          {
+            d: "M4 4.586L1.707 2.293A1 1 0 1 0 .293 3.707l3 3a.997.997 0 0 0 1.414 0l5-5A1 1 0 1 0 8.293.293L4 4.586z",
+            fill: "currentColor",
+            fillRule: "evenodd",
+            clipRule: "evenodd"
+          }
+        )
+      }
+    );
+  }
+  function CheckboxIcon({ indeterminate, ...others }) {
+    if (indeterminate) {
+      return /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(
+        "svg",
+        {
+          xmlns: "http://www.w3.org/2000/svg",
+          fill: "none",
+          viewBox: "0 0 32 6",
+          "aria-hidden": true,
+          ...others,
+          children: /* @__PURE__ */ (0, import_jsx_runtime97.jsx)("rect", { width: "32", height: "6", fill: "currentColor", rx: "3" })
+        }
+      );
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(CheckIcon, { ...others });
+  }
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxIndicator/CheckboxIndicator.module.css.mjs
+  var classes18 = { "indicator": "m_5e5256ee", "icon": "m_1b1c543a", "indicator--outline": "m_76e20374" };
+
+  // node_modules/@mantine/core/esm/components/Checkbox/CheckboxIndicator/CheckboxIndicator.mjs
+  var defaultProps32 = {
+    icon: CheckboxIcon
+  };
+  var varsResolver17 = createVarsResolver(
+    (theme2, { radius, color, size: size4, iconColor, variant, autoContrast }) => {
+      const parsedColor = parseThemeColor({ color: color || theme2.primaryColor, theme: theme2 });
+      const outlineColor = parsedColor.isThemeColor && parsedColor.shade === void 0 ? `var(--mantine-color-${parsedColor.color}-outline)` : parsedColor.color;
+      return {
+        indicator: {
+          "--checkbox-size": getSize(size4, "checkbox-size"),
+          "--checkbox-radius": radius === void 0 ? void 0 : getRadius(radius),
+          "--checkbox-color": variant === "outline" ? outlineColor : getThemeColor(color, theme2),
+          "--checkbox-icon-color": iconColor ? getThemeColor(iconColor, theme2) : getAutoContrastValue(autoContrast, theme2) ? getContrastColor({ color, theme: theme2, autoContrast }) : void 0
+        }
+      };
+    }
+  );
+  var CheckboxIndicator = factory((_props, ref) => {
+    const props = useProps("CheckboxIndicator", defaultProps32, _props);
+    const {
+      classNames,
+      className,
+      style,
+      styles,
+      unstyled,
+      vars,
+      icon,
+      indeterminate,
+      radius,
+      color,
+      iconColor,
+      autoContrast,
+      checked,
+      mod,
+      variant,
+      disabled,
+      ...others
+    } = props;
+    const Icon = icon;
+    const getStyles2 = useStyles({
+      name: "CheckboxIndicator",
+      classes: classes18,
+      props,
+      className,
+      style,
+      classNames,
+      styles,
+      unstyled,
+      vars,
+      varsResolver: varsResolver17,
+      rootSelector: "indicator"
+    });
+    const ctx = useCheckboxCardContext();
+    const _checked = typeof checked === "boolean" || typeof indeterminate === "boolean" ? checked || indeterminate : ctx?.checked || false;
+    return /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(
+      Box,
+      {
+        ref,
+        ...getStyles2("indicator", { variant }),
+        variant,
+        mod: [{ checked: _checked, disabled }, mod],
+        ...others,
+        children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(Icon, { indeterminate, ...getStyles2("icon") })
+      }
+    );
+  });
+  CheckboxIndicator.displayName = "@mantine/core/CheckboxIndicator";
+  CheckboxIndicator.classes = classes18;
+
+  // node_modules/@mantine/core/esm/components/Checkbox/Checkbox.module.css.mjs
+  var classes19 = { "root": "m_bf2d988c", "inner": "m_26062bec", "input": "m_26063560", "icon": "m_bf295423", "input--outline": "m_215c4542" };
+
+  // node_modules/@mantine/core/esm/components/Checkbox/Checkbox.mjs
+  var defaultProps33 = {
+    labelPosition: "right",
+    icon: CheckboxIcon
+  };
+  var varsResolver18 = createVarsResolver(
+    (theme2, { radius, color, size: size4, iconColor, variant, autoContrast }) => {
+      const parsedColor = parseThemeColor({ color: color || theme2.primaryColor, theme: theme2 });
+      const outlineColor = parsedColor.isThemeColor && parsedColor.shade === void 0 ? `var(--mantine-color-${parsedColor.color}-outline)` : parsedColor.color;
+      return {
+        root: {
+          "--checkbox-size": getSize(size4, "checkbox-size"),
+          "--checkbox-radius": radius === void 0 ? void 0 : getRadius(radius),
+          "--checkbox-color": variant === "outline" ? outlineColor : getThemeColor(color, theme2),
+          "--checkbox-icon-color": iconColor ? getThemeColor(iconColor, theme2) : getAutoContrastValue(autoContrast, theme2) ? getContrastColor({ color, theme: theme2, autoContrast }) : void 0
+        }
+      };
+    }
+  );
+  var Checkbox = factory((_props, ref) => {
+    const props = useProps("Checkbox", defaultProps33, _props);
+    const {
+      classNames,
+      className,
+      style,
+      styles,
+      unstyled,
+      vars,
+      color,
+      label,
+      id,
+      size: size4,
+      radius,
+      wrapperProps,
+      checked,
+      labelPosition,
+      description,
+      error: error2,
+      disabled,
+      variant,
+      indeterminate,
+      icon,
+      rootRef,
+      iconColor,
+      onChange,
+      autoContrast,
+      mod,
+      ...others
+    } = props;
+    const ctx = useCheckboxGroupContext();
+    const _size = size4 || ctx?.size;
+    const Icon = icon;
+    const getStyles2 = useStyles({
+      name: "Checkbox",
+      props,
+      classes: classes19,
+      className,
+      style,
+      classNames,
+      styles,
+      unstyled,
+      vars,
+      varsResolver: varsResolver18
+    });
+    const { styleProps, rest } = extractStyleProps(others);
+    const uuid = useId(id);
+    const contextProps = ctx ? {
+      checked: ctx.value.includes(rest.value),
+      onChange: (event) => {
+        ctx.onChange(event);
+        onChange?.(event);
+      }
+    } : {};
+    return /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(
+      InlineInput,
+      {
+        ...getStyles2("root"),
+        __staticSelector: "Checkbox",
+        __stylesApiProps: props,
+        id: uuid,
+        size: _size,
+        labelPosition,
+        label,
+        description,
+        error: error2,
+        disabled,
+        classNames,
+        styles,
+        unstyled,
+        "data-checked": contextProps.checked || checked || void 0,
+        variant,
+        ref: rootRef,
+        mod,
+        ...styleProps,
+        ...wrapperProps,
+        children: /* @__PURE__ */ (0, import_jsx_runtime99.jsxs)(Box, { ...getStyles2("inner"), mod: { "data-label-position": labelPosition }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(
+            Box,
+            {
+              component: "input",
+              id: uuid,
+              ref,
+              checked,
+              disabled,
+              mod: { error: !!error2, indeterminate },
+              ...getStyles2("input", { focusable: true, variant }),
+              onChange,
+              ...rest,
+              ...contextProps,
+              type: "checkbox"
+            }
+          ),
+          /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(Icon, { indeterminate, ...getStyles2("icon") })
+        ] })
+      }
+    );
+  });
+  Checkbox.classes = { ...classes19, ...InlineInputClasses };
+  Checkbox.displayName = "@mantine/core/Checkbox";
+  Checkbox.Group = CheckboxGroup;
+  Checkbox.Indicator = CheckboxIndicator;
+  Checkbox.Card = CheckboxCard;
 
   // node_modules/@mantine/core/esm/components/Burger/Burger.mjs
-  var defaultProps30 = {};
-  var varsResolver16 = createVarsResolver(
+  var import_jsx_runtime100 = __toESM(require_jsx_runtime(), 1);
+  var import_react131 = __toESM(require_react(), 1);
+
+  // node_modules/@mantine/core/esm/components/Burger/Burger.module.css.mjs
+  var classes20 = { "root": "m_fea6bf1a", "burger": "m_d4fb9cad" };
+
+  // node_modules/@mantine/core/esm/components/Burger/Burger.mjs
+  var defaultProps34 = {};
+  var varsResolver19 = createVarsResolver(
     (theme2, { color, size: size4, lineSize, transitionDuration, transitionTimingFunction }) => ({
       root: {
         "--burger-color": color ? getThemeColor(color, theme2) : void 0,
@@ -38148,7 +38623,7 @@
     })
   );
   var Burger = factory((_props, ref) => {
-    const props = useProps("Burger", defaultProps30, _props);
+    const props = useProps("Burger", defaultProps34, _props);
     const {
       classNames,
       className,
@@ -38165,7 +38640,7 @@
     } = props;
     const getStyles2 = useStyles({
       name: "Burger",
-      classes: classes16,
+      classes: classes20,
       props,
       className,
       style,
@@ -38173,36 +38648,36 @@
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver16
+      varsResolver: varsResolver19
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime92.jsxs)(UnstyledButton, { ...getStyles2("root"), ref, ...others, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime92.jsx)(Box, { mod: ["reduce-motion", { opened }], ...getStyles2("burger") }),
+    return /* @__PURE__ */ (0, import_jsx_runtime100.jsxs)(UnstyledButton, { ...getStyles2("root"), ref, ...others, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime100.jsx)(Box, { mod: ["reduce-motion", { opened }], ...getStyles2("burger") }),
       children
     ] });
   });
-  Burger.classes = classes16;
+  Burger.classes = classes20;
   Burger.displayName = "@mantine/core/Burger";
 
   // node_modules/@mantine/core/esm/components/Button/Button.mjs
-  var import_jsx_runtime94 = __toESM(require_jsx_runtime(), 1);
-  var import_react124 = __toESM(require_react(), 1);
+  var import_jsx_runtime102 = __toESM(require_jsx_runtime(), 1);
+  var import_react133 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Button/ButtonGroup/ButtonGroup.mjs
-  var import_jsx_runtime93 = __toESM(require_jsx_runtime(), 1);
-  var import_react123 = __toESM(require_react(), 1);
+  var import_jsx_runtime101 = __toESM(require_jsx_runtime(), 1);
+  var import_react132 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Button/Button.module.css.mjs
-  var classes17 = { "root": "m_77c9d27d", "inner": "m_80f1301b", "label": "m_811560b9", "section": "m_a74036a", "loader": "m_a25b86ee", "group": "m_80d6d844" };
+  var classes21 = { "root": "m_77c9d27d", "inner": "m_80f1301b", "label": "m_811560b9", "section": "m_a74036a", "loader": "m_a25b86ee", "group": "m_80d6d844" };
 
   // node_modules/@mantine/core/esm/components/Button/ButtonGroup/ButtonGroup.mjs
-  var defaultProps31 = {
+  var defaultProps35 = {
     orientation: "horizontal"
   };
-  var varsResolver17 = createVarsResolver((_2, { borderWidth }) => ({
+  var varsResolver20 = createVarsResolver((_2, { borderWidth }) => ({
     group: { "--button-border-width": rem(borderWidth) }
   }));
   var ButtonGroup = factory((_props, ref) => {
-    const props = useProps("ButtonGroup", defaultProps31, _props);
+    const props = useProps("ButtonGroup", defaultProps35, _props);
     const {
       className,
       style,
@@ -38215,21 +38690,21 @@
       variant,
       mod,
       ...others
-    } = useProps("ButtonGroup", defaultProps31, _props);
+    } = useProps("ButtonGroup", defaultProps35, _props);
     const getStyles2 = useStyles({
       name: "ButtonGroup",
       props,
-      classes: classes17,
+      classes: classes21,
       className,
       style,
       classNames,
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver17,
+      varsResolver: varsResolver20,
       rootSelector: "group"
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(
       Box,
       {
         ...getStyles2("group"),
@@ -38241,7 +38716,7 @@
       }
     );
   });
-  ButtonGroup.classes = classes17;
+  ButtonGroup.classes = classes21;
   ButtonGroup.displayName = "@mantine/core/ButtonGroup";
 
   // node_modules/@mantine/core/esm/components/Button/Button.mjs
@@ -38251,8 +38726,8 @@
     common: { transformOrigin: "center" },
     transitionProperty: "transform, opacity"
   };
-  var defaultProps32 = {};
-  var varsResolver18 = createVarsResolver(
+  var defaultProps36 = {};
+  var varsResolver21 = createVarsResolver(
     (theme2, { radius, color, gradient, variant, size: size4, justify, autoContrast }) => {
       const colors = theme2.variantColorResolver({
         color: color || theme2.primaryColor,
@@ -38278,7 +38753,7 @@
     }
   );
   var Button = polymorphicFactory((_props, ref) => {
-    const props = useProps("Button", defaultProps32, _props);
+    const props = useProps("Button", defaultProps36, _props);
     const {
       style,
       vars,
@@ -38305,18 +38780,18 @@
     const getStyles2 = useStyles({
       name: "Button",
       props,
-      classes: classes17,
+      classes: classes21,
       className,
       style,
       classNames,
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver18
+      varsResolver: varsResolver21
     });
     const hasLeftSection = !!leftSection;
     const hasRightSection = !!rightSection;
-    return /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime102.jsxs)(
       UnstyledButton,
       {
         ref,
@@ -38336,7 +38811,7 @@
         ],
         ...others,
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(Transition, { mounted: !!loading, transition: loaderTransition, duration: 150, children: (transitionStyles) => /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(Box, { component: "span", ...getStyles2("loader", { style: transitionStyles }), "aria-hidden": true, children: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(Transition, { mounted: !!loading, transition: loaderTransition, duration: 150, children: (transitionStyles) => /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(Box, { component: "span", ...getStyles2("loader", { style: transitionStyles }), "aria-hidden": true, children: /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(
             Loader,
             {
               color: "var(--button-color)",
@@ -38344,44 +38819,44 @@
               ...loaderProps
             }
           ) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime94.jsxs)("span", { ...getStyles2("inner"), children: [
-            leftSection && /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(Box, { component: "span", ...getStyles2("section"), mod: { position: "left" }, children: leftSection }),
-            /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(Box, { component: "span", mod: { loading }, ...getStyles2("label"), children }),
-            rightSection && /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(Box, { component: "span", ...getStyles2("section"), mod: { position: "right" }, children: rightSection })
+          /* @__PURE__ */ (0, import_jsx_runtime102.jsxs)("span", { ...getStyles2("inner"), children: [
+            leftSection && /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(Box, { component: "span", ...getStyles2("section"), mod: { position: "left" }, children: leftSection }),
+            /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(Box, { component: "span", mod: { loading }, ...getStyles2("label"), children }),
+            rightSection && /* @__PURE__ */ (0, import_jsx_runtime102.jsx)(Box, { component: "span", ...getStyles2("section"), mod: { position: "right" }, children: rightSection })
           ] })
         ]
       }
     );
   });
-  Button.classes = classes17;
+  Button.classes = classes21;
   Button.displayName = "@mantine/core/Button";
   Button.Group = ButtonGroup;
 
   // node_modules/@mantine/core/esm/components/Card/Card.mjs
-  var import_jsx_runtime97 = __toESM(require_jsx_runtime(), 1);
-  var import_react127 = __toESM(require_react(), 1);
+  var import_jsx_runtime105 = __toESM(require_jsx_runtime(), 1);
+  var import_react136 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Card/Card.context.mjs
-  var import_react125 = __toESM(require_react(), 1);
-  var import_jsx_runtime95 = __toESM(require_jsx_runtime(), 1);
+  var import_react134 = __toESM(require_react(), 1);
+  var import_jsx_runtime103 = __toESM(require_jsx_runtime(), 1);
   var [CardProvider, useCardContext] = createSafeContext(
     "Card component was not found in tree"
   );
 
   // node_modules/@mantine/core/esm/components/Card/CardSection/CardSection.mjs
-  var import_jsx_runtime96 = __toESM(require_jsx_runtime(), 1);
-  var import_react126 = __toESM(require_react(), 1);
+  var import_jsx_runtime104 = __toESM(require_jsx_runtime(), 1);
+  var import_react135 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Card/Card.module.css.mjs
-  var classes18 = { "root": "m_e615b15f", "section": "m_599a2148" };
+  var classes22 = { "root": "m_e615b15f", "section": "m_599a2148" };
 
   // node_modules/@mantine/core/esm/components/Card/CardSection/CardSection.mjs
-  var defaultProps33 = {};
+  var defaultProps37 = {};
   var CardSection = polymorphicFactory((_props, ref) => {
-    const props = useProps("CardSection", defaultProps33, _props);
+    const props = useProps("CardSection", defaultProps37, _props);
     const { classNames, className, style, styles, vars, withBorder, inheritPadding, mod, ...others } = props;
     const ctx = useCardContext();
-    return /* @__PURE__ */ (0, import_jsx_runtime96.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime104.jsx)(
       Box,
       {
         ref,
@@ -38391,67 +38866,67 @@
       }
     );
   });
-  CardSection.classes = classes18;
+  CardSection.classes = classes22;
   CardSection.displayName = "@mantine/core/CardSection";
 
   // node_modules/@mantine/core/esm/components/Card/Card.mjs
-  var defaultProps34 = {};
-  var varsResolver19 = createVarsResolver((_2, { padding }) => ({
+  var defaultProps38 = {};
+  var varsResolver22 = createVarsResolver((_2, { padding }) => ({
     root: {
       "--card-padding": getSpacing(padding)
     }
   }));
   var Card = polymorphicFactory((_props, ref) => {
-    const props = useProps("Card", defaultProps34, _props);
+    const props = useProps("Card", defaultProps38, _props);
     const { classNames, className, style, styles, unstyled, vars, children, padding, ...others } = props;
     const getStyles2 = useStyles({
       name: "Card",
       props,
-      classes: classes18,
+      classes: classes22,
       className,
       style,
       classNames,
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver19
+      varsResolver: varsResolver22
     });
-    const _children = import_react127.Children.toArray(children);
+    const _children = import_react136.Children.toArray(children);
     const content = _children.map((child, index3) => {
       if (typeof child === "object" && child && "type" in child && child.type === CardSection) {
-        return (0, import_react127.cloneElement)(child, {
+        return (0, import_react136.cloneElement)(child, {
           "data-first-section": index3 === 0 || void 0,
           "data-last-section": index3 === _children.length - 1 || void 0
         });
       }
       return child;
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(CardProvider, { value: { getStyles: getStyles2 }, children: /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(Paper, { ref, unstyled, ...getStyles2("root"), ...others, children: content }) });
+    return /* @__PURE__ */ (0, import_jsx_runtime105.jsx)(CardProvider, { value: { getStyles: getStyles2 }, children: /* @__PURE__ */ (0, import_jsx_runtime105.jsx)(Paper, { ref, unstyled, ...getStyles2("root"), ...others, children: content }) });
   });
-  Card.classes = classes18;
+  Card.classes = classes22;
   Card.displayName = "@mantine/core/Card";
   Card.Section = CardSection;
 
   // node_modules/@mantine/core/esm/components/Container/Container.mjs
-  var import_jsx_runtime98 = __toESM(require_jsx_runtime(), 1);
-  var import_react128 = __toESM(require_react(), 1);
+  var import_jsx_runtime106 = __toESM(require_jsx_runtime(), 1);
+  var import_react137 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Container/Container.module.css.mjs
-  var classes19 = { "root": "m_7485cace" };
+  var classes23 = { "root": "m_7485cace" };
 
   // node_modules/@mantine/core/esm/components/Container/Container.mjs
-  var defaultProps35 = {};
-  var varsResolver20 = createVarsResolver((_2, { size: size4, fluid }) => ({
+  var defaultProps39 = {};
+  var varsResolver23 = createVarsResolver((_2, { size: size4, fluid }) => ({
     root: {
       "--container-size": fluid ? void 0 : getSize(size4, "container-size")
     }
   }));
   var Container = factory((_props, ref) => {
-    const props = useProps("Container", defaultProps35, _props);
+    const props = useProps("Container", defaultProps39, _props);
     const { classNames, className, style, styles, unstyled, vars, fluid, mod, ...others } = props;
     const getStyles2 = useStyles({
       name: "Container",
-      classes: classes19,
+      classes: classes23,
       props,
       className,
       style,
@@ -38459,18 +38934,18 @@
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver20
+      varsResolver: varsResolver23
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(Box, { ref, mod: [{ fluid }, mod], ...getStyles2("root"), ...others });
+    return /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(Box, { ref, mod: [{ fluid }, mod], ...getStyles2("root"), ...others });
   });
-  Container.classes = classes19;
+  Container.classes = classes23;
   Container.displayName = "@mantine/core/Container";
 
   // node_modules/@mantine/core/esm/components/Floating/use-delayed-hover.mjs
-  var import_react129 = __toESM(require_react(), 1);
+  var import_react138 = __toESM(require_react(), 1);
   function useDelayedHover({ open, close, openDelay, closeDelay }) {
-    const openTimeout = (0, import_react129.useRef)(-1);
-    const closeTimeout = (0, import_react129.useRef)(-1);
+    const openTimeout = (0, import_react138.useRef)(-1);
+    const closeTimeout = (0, import_react138.useRef)(-1);
     const clearTimeouts = () => {
       window.clearTimeout(openTimeout.current);
       window.clearTimeout(closeTimeout.current);
@@ -38491,30 +38966,30 @@
         closeTimeout.current = window.setTimeout(close, closeDelay);
       }
     };
-    (0, import_react129.useEffect)(() => clearTimeouts, []);
+    (0, import_react138.useEffect)(() => clearTimeouts, []);
     return { openDropdown, closeDropdown };
   }
 
   // node_modules/@mantine/core/esm/components/LoadingOverlay/LoadingOverlay.mjs
-  var import_jsx_runtime99 = __toESM(require_jsx_runtime(), 1);
-  var import_react130 = __toESM(require_react(), 1);
+  var import_jsx_runtime107 = __toESM(require_jsx_runtime(), 1);
+  var import_react139 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/LoadingOverlay/LoadingOverlay.module.css.mjs
-  var classes20 = { "root": "m_6e45937b", "loader": "m_e8eb006c", "overlay": "m_df587f17" };
+  var classes24 = { "root": "m_6e45937b", "loader": "m_e8eb006c", "overlay": "m_df587f17" };
 
   // node_modules/@mantine/core/esm/components/LoadingOverlay/LoadingOverlay.mjs
-  var defaultProps36 = {
+  var defaultProps40 = {
     transitionProps: { transition: "fade", duration: 0 },
     overlayProps: { backgroundOpacity: 0.75 },
     zIndex: getDefaultZIndex("overlay")
   };
-  var varsResolver21 = createVarsResolver((_2, { zIndex }) => ({
+  var varsResolver24 = createVarsResolver((_2, { zIndex }) => ({
     root: {
       "--lo-z-index": zIndex?.toString()
     }
   }));
   var LoadingOverlay = factory((_props, ref) => {
-    const props = useProps("LoadingOverlay", defaultProps36, _props);
+    const props = useProps("LoadingOverlay", defaultProps40, _props);
     const {
       classNames,
       className,
@@ -38532,7 +39007,7 @@
     const theme2 = useMantineTheme();
     const getStyles2 = useStyles({
       name: "LoadingOverlay",
-      classes: classes20,
+      classes: classes24,
       props,
       className,
       style,
@@ -38540,12 +39015,12 @@
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver21
+      varsResolver: varsResolver24
     });
-    const _overlayProps = { ...defaultProps36.overlayProps, ...overlayProps };
-    return /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(Transition, { transition: "fade", ...transitionProps, mounted: !!visible2, children: (transitionStyles) => /* @__PURE__ */ (0, import_jsx_runtime99.jsxs)(Box, { ...getStyles2("root", { style: transitionStyles }), ref, ...others, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(Loader, { ...getStyles2("loader"), unstyled, ...loaderProps }),
-      /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(
+    const _overlayProps = { ...defaultProps40.overlayProps, ...overlayProps };
+    return /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(Transition, { transition: "fade", ...transitionProps, mounted: !!visible2, children: (transitionStyles) => /* @__PURE__ */ (0, import_jsx_runtime107.jsxs)(Box, { ...getStyles2("root", { style: transitionStyles }), ref, ...others, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(Loader, { ...getStyles2("loader"), unstyled, ...loaderProps }),
+      /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(
         Overlay,
         {
           ..._overlayProps,
@@ -38555,7 +39030,7 @@
           color: overlayProps?.color || theme2.white
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(
         Overlay,
         {
           ..._overlayProps,
@@ -38567,37 +39042,37 @@
       )
     ] }) });
   });
-  LoadingOverlay.classes = classes20;
+  LoadingOverlay.classes = classes24;
   LoadingOverlay.displayName = "@mantine/core/LoadingOverlay";
 
   // node_modules/@mantine/core/esm/components/Menu/Menu.mjs
-  var import_jsx_runtime106 = __toESM(require_jsx_runtime(), 1);
-  var import_react137 = __toESM(require_react(), 1);
+  var import_jsx_runtime114 = __toESM(require_jsx_runtime(), 1);
+  var import_react146 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Menu/Menu.context.mjs
-  var import_react131 = __toESM(require_react(), 1);
-  var import_jsx_runtime100 = __toESM(require_jsx_runtime(), 1);
+  var import_react140 = __toESM(require_react(), 1);
+  var import_jsx_runtime108 = __toESM(require_jsx_runtime(), 1);
   var [MenuContextProvider, useMenuContext] = createSafeContext(
     "Menu component was not found in the tree"
   );
 
   // node_modules/@mantine/core/esm/components/Menu/MenuDivider/MenuDivider.mjs
-  var import_jsx_runtime101 = __toESM(require_jsx_runtime(), 1);
-  var import_react132 = __toESM(require_react(), 1);
+  var import_jsx_runtime109 = __toESM(require_jsx_runtime(), 1);
+  var import_react141 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Menu/Menu.module.css.mjs
-  var classes21 = { "dropdown": "m_dc9b7c9f", "label": "m_9bfac126", "divider": "m_efdf90cb", "item": "m_99ac2aa1", "itemLabel": "m_5476e0d3", "itemSection": "m_8b75e504" };
+  var classes25 = { "dropdown": "m_dc9b7c9f", "label": "m_9bfac126", "divider": "m_efdf90cb", "item": "m_99ac2aa1", "itemLabel": "m_5476e0d3", "itemSection": "m_8b75e504" };
 
   // node_modules/@mantine/core/esm/components/Menu/MenuDivider/MenuDivider.mjs
-  var defaultProps37 = {};
+  var defaultProps41 = {};
   var MenuDivider = factory((props, ref) => {
     const { classNames, className, style, styles, vars, ...others } = useProps(
       "MenuDivider",
-      defaultProps37,
+      defaultProps41,
       props
     );
     const ctx = useMenuContext();
-    return /* @__PURE__ */ (0, import_jsx_runtime101.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime109.jsx)(
       Box,
       {
         ref,
@@ -38606,13 +39081,13 @@
       }
     );
   });
-  MenuDivider.classes = classes21;
+  MenuDivider.classes = classes25;
   MenuDivider.displayName = "@mantine/core/MenuDivider";
 
   // node_modules/@mantine/core/esm/components/Menu/MenuDropdown/MenuDropdown.mjs
-  var import_jsx_runtime102 = __toESM(require_jsx_runtime(), 1);
-  var import_react133 = __toESM(require_react(), 1);
-  var defaultProps38 = {};
+  var import_jsx_runtime110 = __toESM(require_jsx_runtime(), 1);
+  var import_react142 = __toESM(require_react(), 1);
+  var defaultProps42 = {};
   var MenuDropdown = factory((props, ref) => {
     const {
       classNames,
@@ -38625,8 +39100,8 @@
       onKeyDown,
       children,
       ...others
-    } = useProps("MenuDropdown", defaultProps38, props);
-    const wrapperRef = (0, import_react133.useRef)(null);
+    } = useProps("MenuDropdown", defaultProps42, props);
+    const wrapperRef = (0, import_react142.useRef)(null);
     const ctx = useMenuContext();
     const handleKeyDown = createEventHandler(onKeyDown, (event) => {
       if (event.key === "ArrowUp" || event.key === "ArrowDown") {
@@ -38642,7 +39117,7 @@
       onMouseLeave,
       () => (ctx.trigger === "hover" || ctx.trigger === "click-hover") && ctx.closeDropdown()
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime102.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime110.jsxs)(
       Popover.Dropdown,
       {
         ...others,
@@ -38662,19 +39137,19 @@
         "data-menu-dropdown": true,
         onKeyDown: handleKeyDown,
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime102.jsx)("div", { tabIndex: -1, "data-autofocus": true, "data-mantine-stop-propagation": true, style: { outline: 0 } }),
+          /* @__PURE__ */ (0, import_jsx_runtime110.jsx)("div", { tabIndex: -1, "data-autofocus": true, "data-mantine-stop-propagation": true, style: { outline: 0 } }),
           children
         ]
       }
     );
   });
-  MenuDropdown.classes = classes21;
+  MenuDropdown.classes = classes25;
   MenuDropdown.displayName = "@mantine/core/MenuDropdown";
 
   // node_modules/@mantine/core/esm/components/Menu/MenuItem/MenuItem.mjs
-  var import_jsx_runtime103 = __toESM(require_jsx_runtime(), 1);
-  var import_react134 = __toESM(require_react(), 1);
-  var defaultProps39 = {};
+  var import_jsx_runtime111 = __toESM(require_jsx_runtime(), 1);
+  var import_react143 = __toESM(require_react(), 1);
+  var defaultProps43 = {};
   var MenuItem = polymorphicFactory((props, ref) => {
     const {
       classNames,
@@ -38689,11 +39164,11 @@
       children,
       disabled,
       ...others
-    } = useProps("MenuItem", defaultProps39, props);
+    } = useProps("MenuItem", defaultProps43, props);
     const ctx = useMenuContext();
     const theme2 = useMantineTheme();
     const { dir } = useDirection();
-    const itemRef = (0, import_react134.useRef)();
+    const itemRef = (0, import_react143.useRef)();
     const itemIndex = ctx.getItemIndex(itemRef.current);
     const _others = others;
     const handleMouseLeave = createEventHandler(_others.onMouseLeave, () => ctx.setHovered(-1));
@@ -38714,7 +39189,7 @@
     );
     const colors = color ? theme2.variantColorResolver({ color, theme: theme2, variant: "light" }) : void 0;
     const parsedThemeColor = color ? parseThemeColor({ color, theme: theme2 }) : null;
-    return /* @__PURE__ */ (0, import_jsx_runtime103.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime111.jsxs)(
       UnstyledButton,
       {
         ...others,
@@ -38746,28 +39221,28 @@
           "--menu-item-hover": colors?.hover
         },
         children: [
-          leftSection && /* @__PURE__ */ (0, import_jsx_runtime103.jsx)("div", { ...ctx.getStyles("itemSection", { styles, classNames }), "data-position": "left", children: leftSection }),
-          children && /* @__PURE__ */ (0, import_jsx_runtime103.jsx)("div", { ...ctx.getStyles("itemLabel", { styles, classNames }), children }),
-          rightSection && /* @__PURE__ */ (0, import_jsx_runtime103.jsx)("div", { ...ctx.getStyles("itemSection", { styles, classNames }), "data-position": "right", children: rightSection })
+          leftSection && /* @__PURE__ */ (0, import_jsx_runtime111.jsx)("div", { ...ctx.getStyles("itemSection", { styles, classNames }), "data-position": "left", children: leftSection }),
+          children && /* @__PURE__ */ (0, import_jsx_runtime111.jsx)("div", { ...ctx.getStyles("itemLabel", { styles, classNames }), children }),
+          rightSection && /* @__PURE__ */ (0, import_jsx_runtime111.jsx)("div", { ...ctx.getStyles("itemSection", { styles, classNames }), "data-position": "right", children: rightSection })
         ]
       }
     );
   });
-  MenuItem.classes = classes21;
+  MenuItem.classes = classes25;
   MenuItem.displayName = "@mantine/core/MenuItem";
 
   // node_modules/@mantine/core/esm/components/Menu/MenuLabel/MenuLabel.mjs
-  var import_jsx_runtime104 = __toESM(require_jsx_runtime(), 1);
-  var import_react135 = __toESM(require_react(), 1);
-  var defaultProps40 = {};
+  var import_jsx_runtime112 = __toESM(require_jsx_runtime(), 1);
+  var import_react144 = __toESM(require_react(), 1);
+  var defaultProps44 = {};
   var MenuLabel = factory((props, ref) => {
     const { classNames, className, style, styles, vars, ...others } = useProps(
       "MenuLabel",
-      defaultProps40,
+      defaultProps44,
       props
     );
     const ctx = useMenuContext();
-    return /* @__PURE__ */ (0, import_jsx_runtime104.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime112.jsx)(
       Box,
       {
         ref,
@@ -38776,17 +39251,17 @@
       }
     );
   });
-  MenuLabel.classes = classes21;
+  MenuLabel.classes = classes25;
   MenuLabel.displayName = "@mantine/core/MenuLabel";
 
   // node_modules/@mantine/core/esm/components/Menu/MenuTarget/MenuTarget.mjs
-  var import_jsx_runtime105 = __toESM(require_jsx_runtime(), 1);
-  var import_react136 = __toESM(require_react(), 1);
-  var defaultProps41 = {
+  var import_jsx_runtime113 = __toESM(require_jsx_runtime(), 1);
+  var import_react145 = __toESM(require_react(), 1);
+  var defaultProps45 = {
     refProp: "ref"
   };
-  var MenuTarget = (0, import_react136.forwardRef)((props, ref) => {
-    const { children, refProp, ...others } = useProps("MenuTarget", defaultProps41, props);
+  var MenuTarget = (0, import_react145.forwardRef)((props, ref) => {
+    const { children, refProp, ...others } = useProps("MenuTarget", defaultProps45, props);
     if (!isElement(children)) {
       throw new Error(
         "Menu.Target component children should be an element or a component that accepts ref. Fragments, strings, numbers and other primitive values are not supported"
@@ -38814,7 +39289,7 @@
         ctx.closeDropdown();
       }
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime105.jsx)(Popover.Target, { refProp, popupType: "menu", ref, ...others, children: (0, import_react136.cloneElement)(children, {
+    return /* @__PURE__ */ (0, import_jsx_runtime113.jsx)(Popover.Target, { refProp, popupType: "menu", ref, ...others, children: (0, import_react145.cloneElement)(children, {
       onClick,
       onMouseEnter,
       onMouseLeave,
@@ -38824,7 +39299,7 @@
   MenuTarget.displayName = "@mantine/core/MenuTarget";
 
   // node_modules/@mantine/core/esm/components/Menu/Menu.mjs
-  var defaultProps42 = {
+  var defaultProps46 = {
     trapFocus: true,
     closeOnItemClick: true,
     clickOutsideEvents: ["mousedown", "touchstart", "keydown"],
@@ -38835,7 +39310,7 @@
     menuItemTabIndex: -1
   };
   function Menu(_props) {
-    const props = useProps("Menu", defaultProps42, _props);
+    const props = useProps("Menu", defaultProps46, _props);
     const {
       children,
       onOpen,
@@ -38861,7 +39336,7 @@
     } = props;
     const getStyles2 = useStyles({
       name: "Menu",
-      classes: classes21,
+      classes: classes25,
       props,
       classNames,
       styles,
@@ -38874,7 +39349,7 @@
       finalValue: false,
       onChange
     });
-    const [openedViaClick, setOpenedViaClick] = (0, import_react137.useState)(false);
+    const [openedViaClick, setOpenedViaClick] = (0, import_react146.useState)(false);
     const close = () => {
       setOpened(false);
       setOpenedViaClick(false);
@@ -38897,7 +39372,7 @@
     useDidUpdate(() => {
       resetHovered();
     }, [_opened]);
-    return /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime114.jsx)(
       MenuContextProvider,
       {
         value: {
@@ -38918,7 +39393,7 @@
           unstyled,
           menuItemTabIndex
         },
-        children: /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(
+        children: /* @__PURE__ */ (0, import_jsx_runtime114.jsx)(
           Popover,
           {
             ...others,
@@ -38940,7 +39415,7 @@
     );
   }
   Menu.extend = (input) => input;
-  Menu.classes = classes21;
+  Menu.classes = classes25;
   Menu.displayName = "@mantine/core/Menu";
   Menu.Item = MenuItem;
   Menu.Label = MenuLabel;
@@ -38949,30 +39424,30 @@
   Menu.Divider = MenuDivider;
 
   // node_modules/@mantine/core/esm/components/Modal/Modal.mjs
-  var import_jsx_runtime115 = __toESM(require_jsx_runtime(), 1);
-  var import_react146 = __toESM(require_react(), 1);
+  var import_jsx_runtime123 = __toESM(require_jsx_runtime(), 1);
+  var import_react155 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Modal/ModalBody.mjs
-  var import_jsx_runtime108 = __toESM(require_jsx_runtime(), 1);
-  var import_react139 = __toESM(require_react(), 1);
+  var import_jsx_runtime116 = __toESM(require_jsx_runtime(), 1);
+  var import_react148 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Modal/Modal.context.mjs
-  var import_react138 = __toESM(require_react(), 1);
-  var import_jsx_runtime107 = __toESM(require_jsx_runtime(), 1);
+  var import_react147 = __toESM(require_react(), 1);
+  var import_jsx_runtime115 = __toESM(require_jsx_runtime(), 1);
   var [ModalProvider, useModalContext] = createSafeContext(
     "Modal component was not found in tree"
   );
 
   // node_modules/@mantine/core/esm/components/Modal/Modal.module.css.mjs
-  var classes22 = { "root": "m_9df02822", "content": "m_54c44539", "inner": "m_1f958f16", "header": "m_d0e2b9cd" };
+  var classes26 = { "root": "m_9df02822", "content": "m_54c44539", "inner": "m_1f958f16", "header": "m_d0e2b9cd" };
 
   // node_modules/@mantine/core/esm/components/Modal/ModalBody.mjs
-  var defaultProps43 = {};
+  var defaultProps47 = {};
   var ModalBody = factory((_props, ref) => {
-    const props = useProps("ModalBody", defaultProps43, _props);
+    const props = useProps("ModalBody", defaultProps47, _props);
     const { classNames, className, style, styles, vars, ...others } = props;
     const ctx = useModalContext();
-    return /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(
       ModalBaseBody,
       {
         ref,
@@ -38981,18 +39456,18 @@
       }
     );
   });
-  ModalBody.classes = classes22;
+  ModalBody.classes = classes26;
   ModalBody.displayName = "@mantine/core/ModalBody";
 
   // node_modules/@mantine/core/esm/components/Modal/ModalCloseButton.mjs
-  var import_jsx_runtime109 = __toESM(require_jsx_runtime(), 1);
-  var import_react140 = __toESM(require_react(), 1);
-  var defaultProps44 = {};
+  var import_jsx_runtime117 = __toESM(require_jsx_runtime(), 1);
+  var import_react149 = __toESM(require_react(), 1);
+  var defaultProps48 = {};
   var ModalCloseButton = factory((_props, ref) => {
-    const props = useProps("ModalCloseButton", defaultProps44, _props);
+    const props = useProps("ModalCloseButton", defaultProps48, _props);
     const { classNames, className, style, styles, vars, ...others } = props;
     const ctx = useModalContext();
-    return /* @__PURE__ */ (0, import_jsx_runtime109.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime117.jsx)(
       ModalBaseCloseButton,
       {
         ref,
@@ -39001,19 +39476,19 @@
       }
     );
   });
-  ModalCloseButton.classes = classes22;
+  ModalCloseButton.classes = classes26;
   ModalCloseButton.displayName = "@mantine/core/ModalCloseButton";
 
   // node_modules/@mantine/core/esm/components/Modal/ModalContent.mjs
-  var import_jsx_runtime110 = __toESM(require_jsx_runtime(), 1);
-  var import_react141 = __toESM(require_react(), 1);
-  var defaultProps45 = {};
+  var import_jsx_runtime118 = __toESM(require_jsx_runtime(), 1);
+  var import_react150 = __toESM(require_react(), 1);
+  var defaultProps49 = {};
   var ModalContent = factory((_props, ref) => {
-    const props = useProps("ModalContent", defaultProps45, _props);
+    const props = useProps("ModalContent", defaultProps49, _props);
     const { classNames, className, style, styles, vars, children, ...others } = props;
     const ctx = useModalContext();
     const Scroll = ctx.scrollAreaComponent || NativeScrollArea;
-    return /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime118.jsx)(
       ModalBaseContent,
       {
         ...ctx.getStyles("content", { className, style, styles, classNames }),
@@ -39022,7 +39497,7 @@
         "data-modal-content": true,
         ref,
         ...others,
-        children: /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(
+        children: /* @__PURE__ */ (0, import_jsx_runtime118.jsx)(
           Scroll,
           {
             style: {
@@ -39034,18 +39509,18 @@
       }
     );
   });
-  ModalContent.classes = classes22;
+  ModalContent.classes = classes26;
   ModalContent.displayName = "@mantine/core/ModalContent";
 
   // node_modules/@mantine/core/esm/components/Modal/ModalHeader.mjs
-  var import_jsx_runtime111 = __toESM(require_jsx_runtime(), 1);
-  var import_react142 = __toESM(require_react(), 1);
-  var defaultProps46 = {};
+  var import_jsx_runtime119 = __toESM(require_jsx_runtime(), 1);
+  var import_react151 = __toESM(require_react(), 1);
+  var defaultProps50 = {};
   var ModalHeader = factory((_props, ref) => {
-    const props = useProps("ModalHeader", defaultProps46, _props);
+    const props = useProps("ModalHeader", defaultProps50, _props);
     const { classNames, className, style, styles, vars, ...others } = props;
     const ctx = useModalContext();
-    return /* @__PURE__ */ (0, import_jsx_runtime111.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime119.jsx)(
       ModalBaseHeader,
       {
         ref,
@@ -39054,18 +39529,18 @@
       }
     );
   });
-  ModalHeader.classes = classes22;
+  ModalHeader.classes = classes26;
   ModalHeader.displayName = "@mantine/core/ModalHeader";
 
   // node_modules/@mantine/core/esm/components/Modal/ModalOverlay.mjs
-  var import_jsx_runtime112 = __toESM(require_jsx_runtime(), 1);
-  var import_react143 = __toESM(require_react(), 1);
-  var defaultProps47 = {};
+  var import_jsx_runtime120 = __toESM(require_jsx_runtime(), 1);
+  var import_react152 = __toESM(require_react(), 1);
+  var defaultProps51 = {};
   var ModalOverlay = factory((_props, ref) => {
-    const props = useProps("ModalOverlay", defaultProps47, _props);
+    const props = useProps("ModalOverlay", defaultProps51, _props);
     const { classNames, className, style, styles, vars, ...others } = props;
     const ctx = useModalContext();
-    return /* @__PURE__ */ (0, import_jsx_runtime112.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime120.jsx)(
       ModalBaseOverlay,
       {
         ref,
@@ -39074,13 +39549,13 @@
       }
     );
   });
-  ModalOverlay.classes = classes22;
+  ModalOverlay.classes = classes26;
   ModalOverlay.displayName = "@mantine/core/ModalOverlay";
 
   // node_modules/@mantine/core/esm/components/Modal/ModalRoot.mjs
-  var import_jsx_runtime113 = __toESM(require_jsx_runtime(), 1);
-  var import_react144 = __toESM(require_react(), 1);
-  var defaultProps48 = {
+  var import_jsx_runtime121 = __toESM(require_jsx_runtime(), 1);
+  var import_react153 = __toESM(require_react(), 1);
+  var defaultProps52 = {
     __staticSelector: "Modal",
     closeOnClickOutside: true,
     withinPortal: true,
@@ -39093,7 +39568,7 @@
     transitionProps: { duration: 200, transition: "fade-down" },
     yOffset: "5dvh"
   };
-  var varsResolver22 = createVarsResolver(
+  var varsResolver25 = createVarsResolver(
     (_2, { radius, size: size4, yOffset, xOffset }) => ({
       root: {
         "--modal-radius": radius === void 0 ? void 0 : getRadius(radius),
@@ -39104,7 +39579,7 @@
     })
   );
   var ModalRoot = factory((_props, ref) => {
-    const props = useProps("ModalRoot", defaultProps48, _props);
+    const props = useProps("ModalRoot", defaultProps52, _props);
     const {
       classNames,
       className,
@@ -39123,7 +39598,7 @@
     } = props;
     const getStyles2 = useStyles({
       name: __staticSelector,
-      classes: classes22,
+      classes: classes26,
       props,
       className,
       style,
@@ -39131,9 +39606,9 @@
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver22
+      varsResolver: varsResolver25
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime113.jsx)(ModalProvider, { value: { yOffset, scrollAreaComponent, getStyles: getStyles2, fullScreen }, children: /* @__PURE__ */ (0, import_jsx_runtime113.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime121.jsx)(ModalProvider, { value: { yOffset, scrollAreaComponent, getStyles: getStyles2, fullScreen }, children: /* @__PURE__ */ (0, import_jsx_runtime121.jsx)(
       ModalBase,
       {
         ref,
@@ -39145,18 +39620,18 @@
       }
     ) });
   });
-  ModalRoot.classes = classes22;
+  ModalRoot.classes = classes26;
   ModalRoot.displayName = "@mantine/core/ModalRoot";
 
   // node_modules/@mantine/core/esm/components/Modal/ModalTitle.mjs
-  var import_jsx_runtime114 = __toESM(require_jsx_runtime(), 1);
-  var import_react145 = __toESM(require_react(), 1);
-  var defaultProps49 = {};
+  var import_jsx_runtime122 = __toESM(require_jsx_runtime(), 1);
+  var import_react154 = __toESM(require_react(), 1);
+  var defaultProps53 = {};
   var ModalTitle = factory((_props, ref) => {
-    const props = useProps("ModalTitle", defaultProps49, _props);
+    const props = useProps("ModalTitle", defaultProps53, _props);
     const { classNames, className, style, styles, vars, ...others } = props;
     const ctx = useModalContext();
-    return /* @__PURE__ */ (0, import_jsx_runtime114.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime122.jsx)(
       ModalBaseTitle,
       {
         ref,
@@ -39165,11 +39640,11 @@
       }
     );
   });
-  ModalTitle.classes = classes22;
+  ModalTitle.classes = classes26;
   ModalTitle.displayName = "@mantine/core/ModalTitle";
 
   // node_modules/@mantine/core/esm/components/Modal/Modal.mjs
-  var defaultProps50 = {
+  var defaultProps54 = {
     closeOnClickOutside: true,
     withinPortal: true,
     lockScroll: true,
@@ -39192,20 +39667,20 @@
       children,
       radius,
       ...others
-    } = useProps("Modal", defaultProps50, _props);
+    } = useProps("Modal", defaultProps54, _props);
     const hasHeader = !!title || withCloseButton;
-    return /* @__PURE__ */ (0, import_jsx_runtime115.jsxs)(ModalRoot, { ref, radius, ...others, children: [
-      withOverlay && /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(ModalOverlay, { ...overlayProps }),
-      /* @__PURE__ */ (0, import_jsx_runtime115.jsxs)(ModalContent, { radius, children: [
-        hasHeader && /* @__PURE__ */ (0, import_jsx_runtime115.jsxs)(ModalHeader, { children: [
-          title && /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(ModalTitle, { children: title }),
-          withCloseButton && /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(ModalCloseButton, { ...closeButtonProps })
+    return /* @__PURE__ */ (0, import_jsx_runtime123.jsxs)(ModalRoot, { ref, radius, ...others, children: [
+      withOverlay && /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(ModalOverlay, { ...overlayProps }),
+      /* @__PURE__ */ (0, import_jsx_runtime123.jsxs)(ModalContent, { radius, children: [
+        hasHeader && /* @__PURE__ */ (0, import_jsx_runtime123.jsxs)(ModalHeader, { children: [
+          title && /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(ModalTitle, { children: title }),
+          withCloseButton && /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(ModalCloseButton, { ...closeButtonProps })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime115.jsx)(ModalBody, { children })
+        /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(ModalBody, { children })
       ] })
     ] });
   });
-  Modal.classes = classes22;
+  Modal.classes = classes26;
   Modal.displayName = "@mantine/core/Modal";
   Modal.Root = ModalRoot;
   Modal.Overlay = ModalOverlay;
@@ -39216,24 +39691,24 @@
   Modal.CloseButton = ModalCloseButton;
 
   // node_modules/@mantine/core/esm/components/Notification/Notification.mjs
-  var import_jsx_runtime116 = __toESM(require_jsx_runtime(), 1);
-  var import_react147 = __toESM(require_react(), 1);
+  var import_jsx_runtime124 = __toESM(require_jsx_runtime(), 1);
+  var import_react156 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Notification/Notification.module.css.mjs
-  var classes23 = { "root": "m_a513464", "icon": "m_a4ceffb", "loader": "m_b0920b15", "body": "m_a49ed24", "title": "m_3feedf16", "description": "m_3d733a3a", "closeButton": "m_919a4d88" };
+  var classes27 = { "root": "m_a513464", "icon": "m_a4ceffb", "loader": "m_b0920b15", "body": "m_a49ed24", "title": "m_3feedf16", "description": "m_3d733a3a", "closeButton": "m_919a4d88" };
 
   // node_modules/@mantine/core/esm/components/Notification/Notification.mjs
-  var defaultProps51 = {
+  var defaultProps55 = {
     withCloseButton: true
   };
-  var varsResolver23 = createVarsResolver((theme2, { radius, color }) => ({
+  var varsResolver26 = createVarsResolver((theme2, { radius, color }) => ({
     root: {
       "--notification-radius": radius === void 0 ? void 0 : getRadius(radius),
       "--notification-color": color ? getThemeColor(color, theme2) : void 0
     }
   }));
   var Notification = factory((_props, ref) => {
-    const props = useProps("Notification", defaultProps51, _props);
+    const props = useProps("Notification", defaultProps55, _props);
     const {
       className,
       color,
@@ -39257,7 +39732,7 @@
     } = props;
     const getStyles2 = useStyles({
       name: "Notification",
-      classes: classes23,
+      classes: classes27,
       props,
       className,
       style,
@@ -39265,9 +39740,9 @@
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver23
+      varsResolver: varsResolver26
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime116.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime124.jsxs)(
       Box,
       {
         ...getStyles2("root"),
@@ -39277,13 +39752,13 @@
         ...others,
         role: "alert",
         children: [
-          icon && !loading && /* @__PURE__ */ (0, import_jsx_runtime116.jsx)("div", { ...getStyles2("icon"), children: icon }),
-          loading && /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(Loader, { size: 28, color, ...getStyles2("loader") }),
-          /* @__PURE__ */ (0, import_jsx_runtime116.jsxs)("div", { ...getStyles2("body"), children: [
-            title && /* @__PURE__ */ (0, import_jsx_runtime116.jsx)("div", { ...getStyles2("title"), children: title }),
-            /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(Box, { ...getStyles2("description"), mod: { "data-with-title": !!title }, children })
+          icon && !loading && /* @__PURE__ */ (0, import_jsx_runtime124.jsx)("div", { ...getStyles2("icon"), children: icon }),
+          loading && /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(Loader, { size: 28, color, ...getStyles2("loader") }),
+          /* @__PURE__ */ (0, import_jsx_runtime124.jsxs)("div", { ...getStyles2("body"), children: [
+            title && /* @__PURE__ */ (0, import_jsx_runtime124.jsx)("div", { ...getStyles2("title"), children: title }),
+            /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(Box, { ...getStyles2("description"), mod: { "data-with-title": !!title }, children })
           ] }),
-          withCloseButton && /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(
+          withCloseButton && /* @__PURE__ */ (0, import_jsx_runtime124.jsx)(
             CloseButton,
             {
               iconSize: 16,
@@ -39298,26 +39773,26 @@
       }
     );
   });
-  Notification.classes = classes23;
+  Notification.classes = classes27;
   Notification.displayName = "@mantine/core/Notification";
 
   // node_modules/@mantine/core/esm/components/Space/Space.mjs
-  var import_jsx_runtime117 = __toESM(require_jsx_runtime(), 1);
-  var import_react148 = __toESM(require_react(), 1);
-  var defaultProps52 = {};
+  var import_jsx_runtime125 = __toESM(require_jsx_runtime(), 1);
+  var import_react157 = __toESM(require_react(), 1);
+  var defaultProps56 = {};
   var Space = factory((props, ref) => {
-    const { w: w2, h: h2, miw, mih, ...others } = useProps("Space", defaultProps52, props);
-    return /* @__PURE__ */ (0, import_jsx_runtime117.jsx)(Box, { ref, ...others, w: w2, miw: miw ?? w2, h: h2, mih: mih ?? h2 });
+    const { w: w2, h: h2, miw, mih, ...others } = useProps("Space", defaultProps56, props);
+    return /* @__PURE__ */ (0, import_jsx_runtime125.jsx)(Box, { ref, ...others, w: w2, miw: miw ?? w2, h: h2, mih: mih ?? h2 });
   });
   Space.displayName = "@mantine/core/Space";
 
   // node_modules/@mantine/core/esm/components/Title/Title.mjs
-  var import_jsx_runtime119 = __toESM(require_jsx_runtime(), 1);
-  var import_react150 = __toESM(require_react(), 1);
+  var import_jsx_runtime127 = __toESM(require_jsx_runtime(), 1);
+  var import_react159 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/core/esm/components/Title/get-title-size.mjs
-  var import_react149 = __toESM(require_react(), 1);
-  var import_jsx_runtime118 = __toESM(require_jsx_runtime(), 1);
+  var import_react158 = __toESM(require_react(), 1);
+  var import_jsx_runtime126 = __toESM(require_jsx_runtime(), 1);
   var headings3 = ["h1", "h2", "h3", "h4", "h5", "h6"];
   var sizes = ["xs", "sm", "md", "lg", "xl"];
   function getTitleSize(order, size4) {
@@ -39343,13 +39818,13 @@
   }
 
   // node_modules/@mantine/core/esm/components/Title/Title.module.css.mjs
-  var classes24 = { "root": "m_8a5d1357" };
+  var classes28 = { "root": "m_8a5d1357" };
 
   // node_modules/@mantine/core/esm/components/Title/Title.mjs
-  var defaultProps53 = {
+  var defaultProps57 = {
     order: 1
   };
-  var varsResolver24 = createVarsResolver((_2, { order, size: size4, lineClamp, textWrap }) => {
+  var varsResolver27 = createVarsResolver((_2, { order, size: size4, lineClamp, textWrap }) => {
     const sizeVariables = getTitleSize(order, size4);
     return {
       root: {
@@ -39362,7 +39837,7 @@
     };
   });
   var Title = factory((_props, ref) => {
-    const props = useProps("Title", defaultProps53, _props);
+    const props = useProps("Title", defaultProps57, _props);
     const {
       classNames,
       className,
@@ -39381,19 +39856,19 @@
     const getStyles2 = useStyles({
       name: "Title",
       props,
-      classes: classes24,
+      classes: classes28,
       className,
       style,
       classNames,
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver24
+      varsResolver: varsResolver27
     });
     if (![1, 2, 3, 4, 5, 6].includes(order)) {
       return null;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime119.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime127.jsx)(
       Box,
       {
         ...getStyles2("root"),
@@ -39406,27 +39881,27 @@
       }
     );
   });
-  Title.classes = classes24;
+  Title.classes = classes28;
   Title.displayName = "@mantine/core/Title";
 
   // node_modules/@mantine/modals/esm/ModalsProvider.mjs
-  var import_jsx_runtime121 = __toESM(require_jsx_runtime(), 1);
-  var import_react153 = __toESM(require_react(), 1);
+  var import_jsx_runtime129 = __toESM(require_jsx_runtime(), 1);
+  var import_react162 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/modals/esm/ConfirmModal.mjs
-  var import_jsx_runtime120 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime128 = __toESM(require_jsx_runtime(), 1);
 
   // node_modules/@mantine/modals/esm/use-modals/use-modals.mjs
-  var import_react152 = __toESM(require_react(), 1);
+  var import_react161 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/modals/esm/context.mjs
-  var import_react151 = __toESM(require_react(), 1);
-  var ModalsContext = (0, import_react151.createContext)(null);
+  var import_react160 = __toESM(require_react(), 1);
+  var ModalsContext = (0, import_react160.createContext)(null);
   ModalsContext.displayName = "@mantine/modals/ModalsContext";
 
   // node_modules/@mantine/modals/esm/use-modals/use-modals.mjs
   function useModals() {
-    const ctx = (0, import_react152.useContext)(ModalsContext);
+    const ctx = (0, import_react161.useContext)(ModalsContext);
     if (!ctx) {
       throw new Error(
         "[@mantine/modals] useModals hook was called outside of context, wrap your app with ModalsProvider component"
@@ -39460,11 +39935,11 @@
       typeof onConfirm === "function" && onConfirm();
       closeOnConfirm && ctx.closeModal(id);
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime120.jsxs)(import_jsx_runtime120.Fragment, { children: [
-      children && /* @__PURE__ */ (0, import_jsx_runtime120.jsx)(Box, { mb: "md", children }),
-      /* @__PURE__ */ (0, import_jsx_runtime120.jsxs)(Group, { mt: children ? 0 : "md", justify: "flex-end", ...groupProps, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime120.jsx)(Button, { variant: "default", ...cancelProps, onClick: handleCancel, children: cancelProps?.children || cancelLabel }),
-        /* @__PURE__ */ (0, import_jsx_runtime120.jsx)(Button, { ...confirmProps, onClick: handleConfirm, children: confirmProps?.children || confirmLabel })
+    return /* @__PURE__ */ (0, import_jsx_runtime128.jsxs)(import_jsx_runtime128.Fragment, { children: [
+      children && /* @__PURE__ */ (0, import_jsx_runtime128.jsx)(Box, { mb: "md", children }),
+      /* @__PURE__ */ (0, import_jsx_runtime128.jsxs)(Group, { mt: children ? 0 : "md", justify: "flex-end", ...groupProps, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime128.jsx)(Button, { variant: "default", ...cancelProps, onClick: handleCancel, children: cancelProps?.children || cancelLabel }),
+        /* @__PURE__ */ (0, import_jsx_runtime128.jsx)(Button, { ...confirmProps, onClick: handleConfirm, children: confirmProps?.children || confirmLabel })
       ] })
     ] });
   }
@@ -39559,16 +40034,16 @@
     };
   }
   function ModalsProvider({ children, modalProps, labels, modals }) {
-    const [state, dispatch] = (0, import_react153.useReducer)(modalsReducer, { modals: [], current: null });
-    const stateRef = (0, import_react153.useRef)(state);
+    const [state, dispatch] = (0, import_react162.useReducer)(modalsReducer, { modals: [], current: null });
+    const stateRef = (0, import_react162.useRef)(state);
     stateRef.current = state;
-    const closeAll = (0, import_react153.useCallback)(
+    const closeAll = (0, import_react162.useCallback)(
       (canceled) => {
         dispatch({ type: "CLOSE_ALL", canceled });
       },
       [stateRef, dispatch]
     );
-    const openModal2 = (0, import_react153.useCallback)(
+    const openModal2 = (0, import_react162.useCallback)(
       ({ modalId, ...props }) => {
         const id = modalId || randomId();
         dispatch({
@@ -39583,7 +40058,7 @@
       },
       [dispatch]
     );
-    const openConfirmModal2 = (0, import_react153.useCallback)(
+    const openConfirmModal2 = (0, import_react162.useCallback)(
       ({ modalId, ...props }) => {
         const id = modalId || randomId();
         dispatch({
@@ -39598,7 +40073,7 @@
       },
       [dispatch]
     );
-    const openContextModal = (0, import_react153.useCallback)(
+    const openContextModal = (0, import_react162.useCallback)(
       (modal, { modalId, ...props }) => {
         const id = modalId || randomId();
         dispatch({
@@ -39614,7 +40089,7 @@
       },
       [dispatch]
     );
-    const closeModal2 = (0, import_react153.useCallback)(
+    const closeModal2 = (0, import_react162.useCallback)(
       (id, canceled) => {
         dispatch({ type: "CLOSE", modalId: id, canceled });
       },
@@ -39645,14 +40120,14 @@
           const ContextModal = modals[currentModal.ctx];
           return {
             modalProps: rest,
-            content: /* @__PURE__ */ (0, import_jsx_runtime121.jsx)(ContextModal, { innerProps, context: ctx, id: currentModal.id })
+            content: /* @__PURE__ */ (0, import_jsx_runtime129.jsx)(ContextModal, { innerProps, context: ctx, id: currentModal.id })
           };
         }
         case "confirm": {
           const { modalProps: separatedModalProps, confirmProps: separatedConfirmProps } = separateConfirmModalProps(currentModal.props);
           return {
             modalProps: separatedModalProps,
-            content: /* @__PURE__ */ (0, import_jsx_runtime121.jsx)(
+            content: /* @__PURE__ */ (0, import_jsx_runtime129.jsx)(
               ConfirmModal,
               {
                 ...separatedConfirmProps,
@@ -39678,8 +40153,8 @@
       }
     };
     const { modalProps: currentModalProps, content } = getCurrentModal();
-    return /* @__PURE__ */ (0, import_jsx_runtime121.jsxs)(ModalsContext.Provider, { value: ctx, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime121.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime129.jsxs)(ModalsContext.Provider, { value: ctx, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime129.jsx)(
         Modal,
         {
           zIndex: getDefaultZIndex("modal") + 1,
@@ -39695,7 +40170,7 @@
   }
 
   // node_modules/@mantine/store/esm/store.mjs
-  var import_react154 = __toESM(require_react(), 1);
+  var import_react163 = __toESM(require_react(), 1);
   function createStore(initialState2) {
     let state = initialState2;
     let initialized = false;
@@ -39724,7 +40199,7 @@
     };
   }
   function useStore2(store2) {
-    return (0, import_react154.useSyncExternalStore)(
+    return (0, import_react163.useSyncExternalStore)(
       store2.subscribe,
       () => store2.getState(),
       () => store2.getState()
@@ -39821,8 +40296,8 @@
   };
 
   // node_modules/@mantine/notifications/esm/Notifications.mjs
-  var import_jsx_runtime123 = __toESM(require_jsx_runtime(), 1);
-  var import_react160 = __toESM(require_react(), 1);
+  var import_jsx_runtime131 = __toESM(require_jsx_runtime(), 1);
+  var import_react169 = __toESM(require_react(), 1);
 
   // node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
   function _setPrototypeOf(t2, e) {
@@ -39838,7 +40313,7 @@
 
   // node_modules/react-transition-group/esm/Transition.js
   var import_prop_types2 = __toESM(require_prop_types());
-  var import_react156 = __toESM(require_react());
+  var import_react165 = __toESM(require_react());
   var import_react_dom6 = __toESM(require_react_dom());
 
   // node_modules/react-transition-group/esm/config.js
@@ -39867,8 +40342,8 @@
   })]) : null;
 
   // node_modules/react-transition-group/esm/TransitionGroupContext.js
-  var import_react155 = __toESM(require_react());
-  var TransitionGroupContext_default = import_react155.default.createContext(null);
+  var import_react164 = __toESM(require_react());
+  var TransitionGroupContext_default = import_react164.default.createContext(null);
 
   // node_modules/react-transition-group/esm/utils/reflow.js
   var forceReflow = function forceReflow2(node) {
@@ -40084,13 +40559,13 @@
       var _this$props = this.props, children = _this$props.children, _in = _this$props.in, _mountOnEnter = _this$props.mountOnEnter, _unmountOnExit = _this$props.unmountOnExit, _appear = _this$props.appear, _enter = _this$props.enter, _exit = _this$props.exit, _timeout = _this$props.timeout, _addEndListener = _this$props.addEndListener, _onEnter = _this$props.onEnter, _onEntering = _this$props.onEntering, _onEntered = _this$props.onEntered, _onExit = _this$props.onExit, _onExiting = _this$props.onExiting, _onExited = _this$props.onExited, _nodeRef = _this$props.nodeRef, childProps = _objectWithoutPropertiesLoose(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
       return (
         // allows for nested Transitions
-        /* @__PURE__ */ import_react156.default.createElement(TransitionGroupContext_default.Provider, {
+        /* @__PURE__ */ import_react165.default.createElement(TransitionGroupContext_default.Provider, {
           value: null
-        }, typeof children === "function" ? children(status, childProps) : import_react156.default.cloneElement(import_react156.default.Children.only(children), childProps))
+        }, typeof children === "function" ? children(status, childProps) : import_react165.default.cloneElement(import_react165.default.Children.only(children), childProps))
       );
     };
     return Transition4;
-  }(import_react156.default.Component);
+  }(import_react165.default.Component);
   Transition2.contextType = TransitionGroupContext_default;
   Transition2.propTypes = true ? {
     /**
@@ -40295,17 +40770,17 @@
 
   // node_modules/react-transition-group/esm/TransitionGroup.js
   var import_prop_types3 = __toESM(require_prop_types());
-  var import_react158 = __toESM(require_react());
+  var import_react167 = __toESM(require_react());
 
   // node_modules/react-transition-group/esm/utils/ChildMapping.js
-  var import_react157 = __toESM(require_react());
+  var import_react166 = __toESM(require_react());
   function getChildMapping(children, mapFn) {
     var mapper = function mapper2(child) {
-      return mapFn && (0, import_react157.isValidElement)(child) ? mapFn(child) : child;
+      return mapFn && (0, import_react166.isValidElement)(child) ? mapFn(child) : child;
     };
     var result = /* @__PURE__ */ Object.create(null);
     if (children)
-      import_react157.Children.map(children, function(c2) {
+      import_react166.Children.map(children, function(c2) {
         return c2;
       }).forEach(function(child) {
         result[child.key] = mapper(child);
@@ -40351,7 +40826,7 @@
   }
   function getInitialChildMapping(props, onExited) {
     return getChildMapping(props.children, function(child) {
-      return (0, import_react157.cloneElement)(child, {
+      return (0, import_react166.cloneElement)(child, {
         onExited: onExited.bind(null, child),
         in: true,
         appear: getProp(child, "appear", props),
@@ -40365,25 +40840,25 @@
     var children = mergeChildMappings(prevChildMapping, nextChildMapping);
     Object.keys(children).forEach(function(key) {
       var child = children[key];
-      if (!(0, import_react157.isValidElement)(child))
+      if (!(0, import_react166.isValidElement)(child))
         return;
       var hasPrev = key in prevChildMapping;
       var hasNext = key in nextChildMapping;
       var prevChild = prevChildMapping[key];
-      var isLeaving = (0, import_react157.isValidElement)(prevChild) && !prevChild.props.in;
+      var isLeaving = (0, import_react166.isValidElement)(prevChild) && !prevChild.props.in;
       if (hasNext && (!hasPrev || isLeaving)) {
-        children[key] = (0, import_react157.cloneElement)(child, {
+        children[key] = (0, import_react166.cloneElement)(child, {
           onExited: onExited.bind(null, child),
           in: true,
           exit: getProp(child, "exit", nextProps),
           enter: getProp(child, "enter", nextProps)
         });
       } else if (!hasNext && hasPrev && !isLeaving) {
-        children[key] = (0, import_react157.cloneElement)(child, {
+        children[key] = (0, import_react166.cloneElement)(child, {
           in: false
         });
-      } else if (hasNext && hasPrev && (0, import_react157.isValidElement)(prevChild)) {
-        children[key] = (0, import_react157.cloneElement)(child, {
+      } else if (hasNext && hasPrev && (0, import_react166.isValidElement)(prevChild)) {
+        children[key] = (0, import_react166.cloneElement)(child, {
           onExited: onExited.bind(null, child),
           in: prevChild.props.in,
           exit: getProp(child, "exit", nextProps),
@@ -40400,7 +40875,7 @@
       return obj[k2];
     });
   };
-  var defaultProps54 = {
+  var defaultProps58 = {
     component: "div",
     childFactory: function childFactory(child) {
       return child;
@@ -40465,16 +40940,16 @@
       delete props.enter;
       delete props.exit;
       if (Component2 === null) {
-        return /* @__PURE__ */ import_react158.default.createElement(TransitionGroupContext_default.Provider, {
+        return /* @__PURE__ */ import_react167.default.createElement(TransitionGroupContext_default.Provider, {
           value: contextValue
         }, children);
       }
-      return /* @__PURE__ */ import_react158.default.createElement(TransitionGroupContext_default.Provider, {
+      return /* @__PURE__ */ import_react167.default.createElement(TransitionGroupContext_default.Provider, {
         value: contextValue
-      }, /* @__PURE__ */ import_react158.default.createElement(Component2, props, children));
+      }, /* @__PURE__ */ import_react167.default.createElement(Component2, props, children));
     };
     return TransitionGroup2;
-  }(import_react158.default.Component);
+  }(import_react167.default.Component);
   TransitionGroup.propTypes = true ? {
     /**
      * `<TransitionGroup>` renders a `<div>` by default. You can change this
@@ -40528,7 +41003,7 @@
      */
     childFactory: import_prop_types3.default.func
   } : {};
-  TransitionGroup.defaultProps = defaultProps54;
+  TransitionGroup.defaultProps = defaultProps58;
   var TransitionGroup_default = TransitionGroup;
 
   // node_modules/@mantine/notifications/esm/get-grouped-notifications/get-grouped-notifications.mjs
@@ -40601,8 +41076,8 @@
   }
 
   // node_modules/@mantine/notifications/esm/NotificationContainer.mjs
-  var import_jsx_runtime122 = __toESM(require_jsx_runtime(), 1);
-  var import_react159 = __toESM(require_react(), 1);
+  var import_jsx_runtime130 = __toESM(require_jsx_runtime(), 1);
+  var import_react168 = __toESM(require_react(), 1);
 
   // node_modules/@mantine/notifications/esm/get-auto-close/get-auto-close.mjs
   function getAutoClose(autoClose, notificationAutoClose) {
@@ -40616,11 +41091,11 @@
   }
 
   // node_modules/@mantine/notifications/esm/NotificationContainer.mjs
-  var NotificationContainer = (0, import_react159.forwardRef)(
+  var NotificationContainer = (0, import_react168.forwardRef)(
     ({ data, onHide, autoClose, ...others }, ref) => {
       const { autoClose: _autoClose, message, ...notificationProps } = data;
       const autoCloseDuration = getAutoClose(autoClose, data.autoClose);
-      const autoCloseTimeout = (0, import_react159.useRef)();
+      const autoCloseTimeout = (0, import_react168.useRef)();
       const cancelAutoClose = () => window.clearTimeout(autoCloseTimeout.current);
       const handleHide = () => {
         onHide(data.id);
@@ -40631,14 +41106,14 @@
           autoCloseTimeout.current = window.setTimeout(handleHide, autoCloseDuration);
         }
       };
-      (0, import_react159.useEffect)(() => {
+      (0, import_react168.useEffect)(() => {
         data.onOpen?.(data);
       }, []);
-      (0, import_react159.useEffect)(() => {
+      (0, import_react168.useEffect)(() => {
         handleAutoClose();
         return cancelAutoClose;
       }, [autoCloseDuration]);
-      return /* @__PURE__ */ (0, import_jsx_runtime122.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime130.jsx)(
         Notification,
         {
           ...others,
@@ -40655,11 +41130,11 @@
   NotificationContainer.displayName = "@mantine/notifications/NotificationContainer";
 
   // node_modules/@mantine/notifications/esm/Notifications.module.css.mjs
-  var classes25 = { "root": "m_b37d9ac7", "notification": "m_5ed0edd0" };
+  var classes29 = { "root": "m_b37d9ac7", "notification": "m_5ed0edd0" };
 
   // node_modules/@mantine/notifications/esm/Notifications.mjs
   var Transition3 = Transition_default;
-  var defaultProps55 = {
+  var defaultProps59 = {
     position: "bottom-right",
     autoClose: 4e3,
     transitionDuration: 250,
@@ -40670,14 +41145,14 @@
     store: notificationsStore,
     withinPortal: true
   };
-  var varsResolver25 = createVarsResolver((_2, { zIndex, containerWidth }) => ({
+  var varsResolver28 = createVarsResolver((_2, { zIndex, containerWidth }) => ({
     root: {
       "--notifications-z-index": zIndex?.toString(),
       "--notifications-container-width": rem(containerWidth)
     }
   }));
   var Notifications = factory((_props, ref) => {
-    const props = useProps("Notifications", defaultProps55, _props);
+    const props = useProps("Notifications", defaultProps59, _props);
     const {
       classNames,
       className,
@@ -40701,13 +41176,13 @@
     const data = useNotifications(store2);
     const forceUpdate = useForceUpdate();
     const shouldReduceMotion = useReducedMotion();
-    const refs = (0, import_react160.useRef)({});
-    const previousLength = (0, import_react160.useRef)(0);
+    const refs = (0, import_react169.useRef)({});
+    const previousLength = (0, import_react169.useRef)(0);
     const reduceMotion = theme2.respectReducedMotion ? shouldReduceMotion : false;
     const duration = reduceMotion ? 1 : transitionDuration;
     const getStyles2 = useStyles({
       name: "Notifications",
-      classes: classes25,
+      classes: classes29,
       props,
       className,
       style,
@@ -40715,9 +41190,9 @@
       styles,
       unstyled,
       vars,
-      varsResolver: varsResolver25
+      varsResolver: varsResolver28
     });
-    (0, import_react160.useEffect)(() => {
+    (0, import_react169.useEffect)(() => {
       store2?.updateState((current) => ({
         ...current,
         limit: limit || 5,
@@ -40733,13 +41208,13 @@
     const grouped = getGroupedNotifications(data.notifications, position);
     const groupedComponents = positions.reduce(
       (acc, pos) => {
-        acc[pos] = grouped[pos].map(({ style: notificationStyle, ...notification }) => /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(
+        acc[pos] = grouped[pos].map(({ style: notificationStyle, ...notification }) => /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(
           Transition3,
           {
             timeout: duration,
             onEnter: () => refs.current[notification.id].offsetHeight,
             nodeRef: { current: refs.current[notification.id] },
-            children: (state) => /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(
+            children: (state) => /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(
               NotificationContainer,
               {
                 ref: (node) => {
@@ -40768,16 +41243,16 @@
       },
       {}
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime123.jsxs)(OptionalPortal, { withinPortal, ...portalProps, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(Box, { ...getStyles2("root"), "data-position": "top-center", ref, ...others, children: /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(TransitionGroup_default, { children: groupedComponents["top-center"] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(Box, { ...getStyles2("root"), "data-position": "top-left", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(TransitionGroup_default, { children: groupedComponents["top-left"] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(Box, { ...getStyles2("root"), "data-position": "top-right", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(TransitionGroup_default, { children: groupedComponents["top-right"] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(Box, { ...getStyles2("root"), "data-position": "bottom-right", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(TransitionGroup_default, { children: groupedComponents["bottom-right"] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(Box, { ...getStyles2("root"), "data-position": "bottom-left", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(TransitionGroup_default, { children: groupedComponents["bottom-left"] }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(Box, { ...getStyles2("root"), "data-position": "bottom-center", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(TransitionGroup_default, { children: groupedComponents["bottom-center"] }) })
+    return /* @__PURE__ */ (0, import_jsx_runtime131.jsxs)(OptionalPortal, { withinPortal, ...portalProps, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(Box, { ...getStyles2("root"), "data-position": "top-center", ref, ...others, children: /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(TransitionGroup_default, { children: groupedComponents["top-center"] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(Box, { ...getStyles2("root"), "data-position": "top-left", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(TransitionGroup_default, { children: groupedComponents["top-left"] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(Box, { ...getStyles2("root"), "data-position": "top-right", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(TransitionGroup_default, { children: groupedComponents["top-right"] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(Box, { ...getStyles2("root"), "data-position": "bottom-right", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(TransitionGroup_default, { children: groupedComponents["bottom-right"] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(Box, { ...getStyles2("root"), "data-position": "bottom-left", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(TransitionGroup_default, { children: groupedComponents["bottom-left"] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(Box, { ...getStyles2("root"), "data-position": "bottom-center", ...others, children: /* @__PURE__ */ (0, import_jsx_runtime131.jsx)(TransitionGroup_default, { children: groupedComponents["bottom-center"] }) })
     ] });
   });
-  Notifications.classes = classes25;
+  Notifications.classes = classes29;
   Notifications.displayName = "@mantine/notifications/Notifications";
   Notifications.show = notifications.show;
   Notifications.hide = notifications.hide;
@@ -42922,27 +43397,28 @@
   });
 
   // src/components/App/index.tsx
-  var import_react164 = __toESM(require_react());
+  var import_react174 = __toESM(require_react());
 
   // node_modules/@tabler/icons-react/dist/esm/tabler-icons-react.mjs
   init_IconBrightness();
+  init_IconFilePlus();
   init_IconUserCircle();
 
   // src/components/Home/index.tsx
-  var import_react162 = __toESM(require_react());
+  var import_react171 = __toESM(require_react());
   var Home = ({}) => {
-    const [query, setQuery] = (0, import_react162.useState)("");
-    const queryUpdated = (0, import_react162.useCallback)((evt) => {
+    const [query, setQuery] = (0, import_react171.useState)("");
+    const queryUpdated = (0, import_react171.useCallback)((evt) => {
       setQuery(evt.target.value);
     }, []);
-    const canSubmitQuery = (0, import_react162.useMemo)(() => !!query, [query]);
-    const querySubmitted = (0, import_react162.useCallback)(() => {
+    const canSubmitQuery = (0, import_react171.useMemo)(() => !!query, [query]);
+    const querySubmitted = (0, import_react171.useCallback)(() => {
       if (canSubmitQuery) {
         const queryHash = btoa(query);
         window.location.href = `/#/q/${queryHash}`;
       }
     }, [canSubmitQuery, query]);
-    const queryKeyUp = (0, import_react162.useCallback)(
+    const queryKeyUp = (0, import_react171.useCallback)(
       (evt) => {
         if (evt.keyCode === 13 && canSubmitQuery) {
           const queryHash = btoa(query);
@@ -42951,7 +43427,7 @@
       },
       [canSubmitQuery, query]
     );
-    return /* @__PURE__ */ import_react162.default.createElement(
+    return /* @__PURE__ */ import_react171.default.createElement(
       Container,
       {
         py: "md",
@@ -42962,7 +43438,7 @@
           justifyContent: "center"
         }
       },
-      /* @__PURE__ */ import_react162.default.createElement(Flex, { gap: "sm", wrap: "wrap" }, /* @__PURE__ */ import_react162.default.createElement(
+      /* @__PURE__ */ import_react171.default.createElement(Flex, { gap: "sm", wrap: "wrap" }, /* @__PURE__ */ import_react171.default.createElement(
         Input,
         {
           autoFocus: true,
@@ -42973,7 +43449,7 @@
           size: "lg",
           style: { flex: 1 }
         }
-      ), /* @__PURE__ */ import_react162.default.createElement(
+      ), /* @__PURE__ */ import_react171.default.createElement(
         Button,
         {
           disabled: !canSubmitQuery,
@@ -42987,16 +43463,16 @@
   };
 
   // src/components/SearchResults/index.tsx
-  var import_react163 = __toESM(require_react());
+  var import_react172 = __toESM(require_react());
   var SearchResults = ({}) => {
     const { query: queryHash } = useParams();
-    const query = (0, import_react163.useMemo)(() => {
+    const query = (0, import_react172.useMemo)(() => {
       if (queryHash) {
         return atob(queryHash);
       }
       return "";
     }, [queryHash]);
-    return /* @__PURE__ */ import_react163.default.createElement(
+    return /* @__PURE__ */ import_react172.default.createElement(
       Container,
       {
         py: "md",
@@ -43006,8 +43482,44 @@
           flexDirection: "column"
         }
       },
-      /* @__PURE__ */ import_react163.default.createElement(Card, { p: "xs" }, /* @__PURE__ */ import_react163.default.createElement(Text, null, `Searching for '${query}'`))
+      /* @__PURE__ */ import_react172.default.createElement(Card, { p: "xs" }, /* @__PURE__ */ import_react172.default.createElement(Text, null, `Searching for '${query}'`))
     );
+  };
+
+  // src/components/CreateObjectModal/index.tsx
+  var import_react173 = __toESM(require_react());
+  var CreateObjectModal = ({
+    opened,
+    onClose
+  }) => {
+    const [name, setName] = (0, import_react173.useState)("");
+    const [templateQuery, setTemplateQuery] = (0, import_react173.useState)("");
+    const nameUpdated = (0, import_react173.useCallback)((evt) => {
+      setName(evt.target.value);
+    }, []);
+    const templateQueryUpdated = (0, import_react173.useCallback)(
+      (evt) => {
+        setTemplateQuery(evt.target.value);
+      },
+      []
+    );
+    return /* @__PURE__ */ import_react173.default.createElement(Modal, { opened, onClose, withCloseButton: false }, /* @__PURE__ */ import_react173.default.createElement(Flex, { direction: "column", align: "stretch", gap: "md" }, /* @__PURE__ */ import_react173.default.createElement(Title, { order: 3 }, "new object"), /* @__PURE__ */ import_react173.default.createElement(
+      Input,
+      {
+        name,
+        onChange: nameUpdated,
+        size: "md",
+        placeholder: "Name of the object"
+      }
+    ), /* @__PURE__ */ import_react173.default.createElement(Checkbox, { label: "Template?" }), /* @__PURE__ */ import_react173.default.createElement(
+      Input,
+      {
+        name: templateQuery,
+        onChange: templateQueryUpdated,
+        size: "xs",
+        placeholder: "Search for template"
+      }
+    ), /* @__PURE__ */ import_react173.default.createElement(Button, null, "Create")));
   };
 
   // src/components/App/index.tsx
@@ -43020,10 +43532,17 @@
     const computedColorScheme = useComputedColorScheme("light", {
       getInitialValueInEffect: true
     });
-    (0, import_react164.useEffect)(() => {
+    const [createModalOpen, setCreateModalOpen] = (0, import_react174.useState)(false);
+    const createModalOpened = (0, import_react174.useCallback)(() => {
+      setCreateModalOpen(true);
+    }, []);
+    const createModalClosed = (0, import_react174.useCallback)(() => {
+      setCreateModalOpen(false);
+    }, []);
+    (0, import_react174.useEffect)(() => {
       dispatch(updatePath(location.pathname));
     }, [dispatch, location]);
-    return /* @__PURE__ */ import_react164.default.createElement("div", null, /* @__PURE__ */ import_react164.default.createElement(
+    return /* @__PURE__ */ import_react174.default.createElement("div", null, /* @__PURE__ */ import_react174.default.createElement(
       AppShell,
       {
         header: { height: 40 },
@@ -43033,19 +43552,19 @@
           }
         })
       },
-      /* @__PURE__ */ import_react164.default.createElement(
+      /* @__PURE__ */ import_react174.default.createElement(
         AppShell.Header,
         {
           h: 40,
           px: { base: "xs", md: "md" },
           py: { base: "0px", md: "md" }
         },
-        /* @__PURE__ */ import_react164.default.createElement(
+        /* @__PURE__ */ import_react174.default.createElement(
           "div",
           {
             style: { display: "flex", alignItems: "center", height: "100%" }
           },
-          /* @__PURE__ */ import_react164.default.createElement(
+          /* @__PURE__ */ import_react174.default.createElement(
             Flex,
             {
               align: "center",
@@ -43053,7 +43572,7 @@
               wrap: "wrap",
               style: { width: "100%" }
             },
-            /* @__PURE__ */ import_react164.default.createElement(
+            /* @__PURE__ */ import_react174.default.createElement(
               Burger,
               {
                 opened,
@@ -43064,25 +43583,32 @@
                 mr: "xl"
               }
             ),
-            /* @__PURE__ */ import_react164.default.createElement(
+            /* @__PURE__ */ import_react174.default.createElement(
               Anchor,
               {
                 c: computedColorScheme === "dark" ? "white" : "dark",
                 href: "/#/"
               },
-              /* @__PURE__ */ import_react164.default.createElement(Title, { order: 3 }, "nexus")
+              /* @__PURE__ */ import_react174.default.createElement(Title, { order: 3 }, "nexus")
             ),
-            /* @__PURE__ */ import_react164.default.createElement(Space, { style: { flex: 1 }, w: "sm" }),
-            /* @__PURE__ */ import_react164.default.createElement(Menu, { shadow: "md", width: 200 }, /* @__PURE__ */ import_react164.default.createElement(Menu.Target, null, /* @__PURE__ */ import_react164.default.createElement(
+            /* @__PURE__ */ import_react174.default.createElement(Space, { style: { flex: 1 }, w: "sm" }),
+            /* @__PURE__ */ import_react174.default.createElement(Menu, { shadow: "md", width: 200 }, /* @__PURE__ */ import_react174.default.createElement(Menu.Target, null, /* @__PURE__ */ import_react174.default.createElement(
               ActionIcon,
               {
                 c: computedColorScheme === "dark" ? "white" : "dark"
               },
-              /* @__PURE__ */ import_react164.default.createElement(IconUserCircle, { strokeWidth: 1, size: 24 })
-            )), /* @__PURE__ */ import_react164.default.createElement(Menu.Dropdown, null, /* @__PURE__ */ import_react164.default.createElement(
+              /* @__PURE__ */ import_react174.default.createElement(IconUserCircle, { strokeWidth: 1, size: 24 })
+            )), /* @__PURE__ */ import_react174.default.createElement(Menu.Dropdown, null, /* @__PURE__ */ import_react174.default.createElement(
               Menu.Item,
               {
-                leftSection: /* @__PURE__ */ import_react164.default.createElement(IconBrightness, { strokeWidth: 1, size: 14 }),
+                leftSection: /* @__PURE__ */ import_react174.default.createElement(IconFilePlus, { strokeWidth: 1, size: 14 }),
+                onClick: () => createModalOpened()
+              },
+              "New object"
+            ), /* @__PURE__ */ import_react174.default.createElement(
+              Menu.Item,
+              {
+                leftSection: /* @__PURE__ */ import_react174.default.createElement(IconBrightness, { strokeWidth: 1, size: 14 }),
                 onClick: () => toggleColorScheme()
               },
               "Toggle dark mode"
@@ -43090,8 +43616,8 @@
           )
         )
       ),
-      /* @__PURE__ */ import_react164.default.createElement(AppShell.Main, { style: { display: "flex" } }, /* @__PURE__ */ import_react164.default.createElement(Routes, null, /* @__PURE__ */ import_react164.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react164.default.createElement(Home, null) }), /* @__PURE__ */ import_react164.default.createElement(Route, { path: "/q/:query", element: /* @__PURE__ */ import_react164.default.createElement(SearchResults, null) })))
-    ), /* @__PURE__ */ import_react164.default.createElement(LoadingOverlay, { visible: false }));
+      /* @__PURE__ */ import_react174.default.createElement(AppShell.Main, { style: { display: "flex" } }, /* @__PURE__ */ import_react174.default.createElement(Routes, null, /* @__PURE__ */ import_react174.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react174.default.createElement(Home, null) }), /* @__PURE__ */ import_react174.default.createElement(Route, { path: "/q/:query", element: /* @__PURE__ */ import_react174.default.createElement(SearchResults, null) })))
+    ), /* @__PURE__ */ import_react174.default.createElement(CreateObjectModal, { opened: createModalOpen, onClose: createModalClosed }), /* @__PURE__ */ import_react174.default.createElement(LoadingOverlay, { visible: false }));
   };
 
   // src/theme.ts
@@ -43124,12 +43650,12 @@
   // src/index.tsx
   import_dayjs.default.extend(import_relativeTime.default);
   import_dayjs.default.extend(import_utc.default);
-  var StyledApp = () => /* @__PURE__ */ import_react165.default.createElement(MantineProvider, { defaultColorScheme: "auto", theme }, /* @__PURE__ */ import_react165.default.createElement(ModalsProvider, null, /* @__PURE__ */ import_react165.default.createElement(Notifications, { position: "bottom-right" }), /* @__PURE__ */ import_react165.default.createElement(import_react165.StrictMode, null, /* @__PURE__ */ import_react165.default.createElement(App, null))));
+  var StyledApp = () => /* @__PURE__ */ import_react175.default.createElement(MantineProvider, { defaultColorScheme: "auto", theme }, /* @__PURE__ */ import_react175.default.createElement(ModalsProvider, null, /* @__PURE__ */ import_react175.default.createElement(Notifications, { position: "bottom-right" }), /* @__PURE__ */ import_react175.default.createElement(import_react175.StrictMode, null, /* @__PURE__ */ import_react175.default.createElement(App, null))));
   var element = document.getElementById("nexus-app");
   if (element) {
     const root = (0, import_client.createRoot)(element);
     root.render(
-      /* @__PURE__ */ import_react165.default.createElement(Provider_default, { store }, /* @__PURE__ */ import_react165.default.createElement(HashRouter, null, /* @__PURE__ */ import_react165.default.createElement(StyledApp, null)))
+      /* @__PURE__ */ import_react175.default.createElement(Provider_default, { store }, /* @__PURE__ */ import_react175.default.createElement(HashRouter, null, /* @__PURE__ */ import_react175.default.createElement(StyledApp, null)))
     );
   }
 })();
@@ -43259,6 +43785,14 @@ object-assign/index.js:
    *)
 
 @tabler/icons-react/dist/esm/icons/IconBrightness.mjs:
+  (**
+   * @license @tabler/icons-react v3.21.0 - MIT
+   *
+   * This source code is licensed under the MIT license.
+   * See the LICENSE file in the root directory of this source tree.
+   *)
+
+@tabler/icons-react/dist/esm/icons/IconFilePlus.mjs:
   (**
    * @license @tabler/icons-react v3.21.0 - MIT
    *

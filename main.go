@@ -11,6 +11,7 @@ import (
 	"github.com/sparkymat/nexus/internal/database"
 	"github.com/sparkymat/nexus/internal/dbx"
 	"github.com/sparkymat/nexus/internal/route"
+	"github.com/sparkymat/nexus/internal/service/object"
 	"github.com/sparkymat/nexus/internal/service/user"
 	"github.com/sparkymat/nexus/internal/tasks"
 )
@@ -54,9 +55,11 @@ func main() {
 	}
 
 	userService := user.New(db)
+	objectService := object.New(dbDriver.DB(), db)
 
 	services := internal.Services{
-		User: userService,
+		User:   userService,
+		Object: objectService,
 	}
 
 	e := echo.New()
