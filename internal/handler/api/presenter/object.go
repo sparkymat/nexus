@@ -23,8 +23,14 @@ func ObjectFromModel(m dbx.Object, p []dbx.Property, pom map[uuid.UUID]dbx.Objec
 	props := []Property{}
 
 	for _, prop := range p {
-		objVal := pom[prop.ID]
-		pprop := PropertyFromModel(prop, objVal)
+		var objPtr *dbx.Object
+
+		objVal, found := pom[prop.ID]
+		if found {
+			objPtr = &objVal
+		}
+
+		pprop := PropertyFromModel(prop, objPtr)
 
 		props = append(props, pprop)
 	}

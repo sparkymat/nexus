@@ -6,7 +6,7 @@ CREATE TABLE properties (
   template_id uuid REFERENCES properties(id) ON DELETE SET NULL,
   property_type property_type NOT NULL,
   string_value text,
-  integer_value integer,
+  integer_value bigint,
   float_value double precision,
   object_value_id uuid REFERENCES objects(id) ON DELETE SET NULL,
   date_value date,

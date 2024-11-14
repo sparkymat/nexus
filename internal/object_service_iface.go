@@ -8,5 +8,6 @@ import (
 )
 
 type ObjectService interface {
-	CreateObject(ctx context.Context, opts object.CreateObjectOptions) (dbx.Object, []dbx.Property, error)
+	CreateObject(ctx context.Context, options object.CreateObjectOptions) (dbx.Object, []dbx.Property, error)
+	CreateProperty(ctx context.Context, options object.CreatePropertyOptions) (dbx.Property, *dbx.Object, error)
 }

@@ -54,7 +54,7 @@ type CreatePropertyParams struct {
 	Name          string
 	PropertyType  PropertyType
 	StringValue   pgtype.Text
-	IntegerValue  pgtype.Int4
+	IntegerValue  pgtype.Int8
 	FloatValue    pgtype.Float8
 	DateValue     pgtype.Date
 	BooleanValue  pgtype.Bool
@@ -119,6 +119,27 @@ func (q *Queries) CreateUser(ctx context.Context, arg CreateUserParams) (User, e
 		&i.Name,
 		&i.Email,
 		&i.EncryptedPassword,
+		&i.CreatedAt,
+		&i.UpdatedAt,
+	)
+	return i, err
+}
+
+const fetchObjectByID = `-- name: FetchObjectByID :one
+SELECT id, name, alternate_names_csv, is_template, template_id, created_at, updated_at FROM objects
+  WHERE id = $1::uuid
+  LIMIT 1
+`
+
+func (q *Queries) FetchObjectByID(ctx context.Context, id uuid.UUID) (Object, error) {
+	row := q.db.QueryRow(ctx, fetchObjectByID, id)
+	var i Object
+	err := row.Scan(
+		&i.ID,
+		&i.Name,
+		&i.AlternateNamesCsv,
+		&i.IsTemplate,
+		&i.TemplateID,
 		&i.CreatedAt,
 		&i.UpdatedAt,
 	)

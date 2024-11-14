@@ -7,14 +7,14 @@ type Property struct {
 	Name         string   `json:"name"`
 	PropertyType string   `json:"propertyType"`
 	StringValue  *string  `json:"stringValue"`
-	IntValue     *int32   `json:"intValue"`
+	IntValue     *int64   `json:"intValue"`
 	FloatValue   *float64 `json:"floatValue"`
 	BoolValue    *bool    `json:"boolValue"`
 	DateValue    *string  `json:"dateValue"`
 	ObjectValue  *Object  `json:"object"`
 }
 
-func PropertyFromModel(m dbx.Property, obj dbx.Object) Property {
+func PropertyFromModel(m dbx.Property, obj *dbx.Object) Property {
 	p := Property{
 		ID:           m.ID.String(),
 		Name:         m.Name,
@@ -28,7 +28,7 @@ func PropertyFromModel(m dbx.Property, obj dbx.Object) Property {
 		}
 	case dbx.PropertyTypeInteger:
 		if m.IntegerValue.Valid {
-			p.IntValue = &m.IntegerValue.Int32
+			p.IntValue = &m.IntegerValue.Int64
 		}
 	case dbx.PropertyTypeFloat:
 		if m.FloatValue.Valid {
@@ -48,8 +48,8 @@ func PropertyFromModel(m dbx.Property, obj dbx.Object) Property {
 			p.DateValue = &dateValue
 		}
 	case dbx.PropertyTypeObject:
-		if m.ObjectValueID.Valid {
-			object := ObjectFromModel(obj, nil, nil)
+		if m.ObjectValueID.Valid && obj != nil {
+			object := ObjectFromModel(*obj, nil, nil)
 			p.ObjectValue = &object
 		}
 	}

@@ -23,4 +23,5 @@ func registerAPIRoutes(app *echo.Group, cfg internal.ConfigService, services int
 	}))
 
 	apiGroup.POST("/objects", api.ObjectsCreate(services))
+	apiGroup.POST("/objects/:parent_id/properties", api.PropertiesCreate(services))
 }

@@ -13,8 +13,8 @@ import (
 
 type ObjectsCreateRequest struct {
 	Name       string  `json:"name"`
-	IsTemplate bool    `json:"is_template"`
-	TemplateID *string `json:"template_id"`
+	IsTemplate bool    `json:"isTemplate"`
+	TemplateID *string `json:"templateId"`
 }
 
 func ObjectsCreate(s internal.Services) echo.HandlerFunc {

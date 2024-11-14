@@ -75,7 +75,7 @@ CREATE TABLE public.properties (
     template_id uuid,
     property_type public.property_type NOT NULL,
     string_value text,
-    integer_value integer,
+    integer_value bigint,
     float_value double precision,
     object_value_id uuid,
     date_value date,

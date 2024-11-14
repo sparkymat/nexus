@@ -26,3 +26,8 @@ INSERT INTO properties (
 -- name: FetchPropertiesByObjectID :many
 SELECT * FROM properties
   WHERE object_id = @object_id::uuid;
+
+-- name: FetchObjectByID :one
+SELECT * FROM objects
+  WHERE id = @id::uuid
+  LIMIT 1;

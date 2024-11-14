@@ -76,7 +76,7 @@ type Property struct {
 	TemplateID    uuid.NullUUID
 	PropertyType  PropertyType
 	StringValue   pgtype.Text
-	IntegerValue  pgtype.Int4
+	IntegerValue  pgtype.Int8
 	FloatValue    pgtype.Float8
 	ObjectValueID uuid.NullUUID
 	DateValue     pgtype.Date
