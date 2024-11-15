@@ -146,6 +146,39 @@ func (q *Queries) FetchObjectByID(ctx context.Context, id uuid.UUID) (Object, er
 	return i, err
 }
 
+const fetchObjectsByID = `-- name: FetchObjectsByID :many
+SELECT id, name, alternate_names_csv, is_template, template_id, created_at, updated_at FROM objects
+  WHERE id = ANY($1::uuid[])
+`
+
+func (q *Queries) FetchObjectsByID(ctx context.Context, ids []uuid.UUID) ([]Object, error) {
+	rows, err := q.db.Query(ctx, fetchObjectsByID, ids)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Object
+	for rows.Next() {
+		var i Object
+		if err := rows.Scan(
+			&i.ID,
+			&i.Name,
+			&i.AlternateNamesCsv,
+			&i.IsTemplate,
+			&i.TemplateID,
+			&i.CreatedAt,
+			&i.UpdatedAt,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
 const fetchPropertiesByObjectID = `-- name: FetchPropertiesByObjectID :many
 SELECT id, name, object_id, template_id, property_type, string_value, integer_value, float_value, object_value_id, date_value, boolean_value, image_path, created_at, updated_at FROM properties
   WHERE object_id = $1::uuid

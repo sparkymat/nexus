@@ -6,8 +6,8 @@ templ BasicLayout(version string, title string, csrfToken string, content templ.
 		<head>
 			<meta charset="utf-8"/>
 			<meta name="viewport" content="width=device-width,initial-scale=1"/>
-			<meta name="csrf-token" content="{%s csrfToken %}"/>
-			<meta name="version" content="{%s version %}"/>
+			<meta name="csrf-token" content={ csrfToken }/>
+			<meta name="version" content={ version }/>
 			<title>{ title }</title>
 			<link rel="stylesheet" href="/css/style.css" type="text/css"/>
 			<link rel="stylesheet" href="/js/app/index.css" type="text/css"/>

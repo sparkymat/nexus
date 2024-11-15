@@ -31,3 +31,7 @@ SELECT * FROM properties
 SELECT * FROM objects
   WHERE id = @id::uuid
   LIMIT 1;
+
+-- name: FetchObjectsByID :many
+SELECT * FROM objects
+  WHERE id = ANY(@ids::uuid[]);
